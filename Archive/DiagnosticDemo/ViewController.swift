@@ -219,6 +219,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = ""
         // Do any additional setup after loading the view, typically from a nib.
       
         
@@ -244,10 +245,93 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
 //        }
       
     }
-
-    func fillCircle(finished: @escaping () -> Void){
-        let circle = self.circleVc!
+        //volume button test
+    func loadSEcondVC(){
+        self.gpsBtn.backgroundColor = UIColor.green
+        self.volumeBtn.backgroundColor = UIColor.blue
+        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
         
+        UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+            //Set x position what ever you want
+            self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
+            
+            self.loadEmptyCircle()
+            self.loadFillCircle()
+            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                self.annimateView()
+                self.loadThirdView()
+                
+            }
+        }, completion: nil)
+      //  self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
+        
+        
+    }
+    //proximity test
+    func loadThirdView(){
+        self.volumeBtn.backgroundColor = UIColor.green
+        self.proximityBtn.backgroundColor = UIColor.blue
+        self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
+        
+        UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+            //Set x position what ever you want
+            self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
+            
+            self.loadEmptyCircle()
+            self.loadFillCircle()
+            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                self.annimateView()
+                self.loadFourthView()
+                
+            }
+        }, completion: nil)
+    }
+    //wifi test
+    func loadFourthView(){
+        self.proximityBtn.backgroundColor = UIColor.green
+        self.wifiBtn.backgroundColor = UIColor.blue
+        self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
+        
+        UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+            //Set x position what ever you want
+            self.buttonVc.frame = CGRect(x: -280, y: 0, width: 603, height: 128);
+            
+            self.loadEmptyCircle()
+            self.loadFillCircle()
+            
+        }, completion: nil)
+        
+        let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+           let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
+            self.navigationController?.pushViewController(reportVC, animated: true)
+            
+        }
+    }
+    // load empty gray circle
+    func loadEmptyCircle(){
+        let circle = self.circleVc!
+        var progressCircle1 = CAShapeLayer()
+        
+        let circlePath1 = UIBezierPath(ovalIn: circle.bounds)
+        
+        progressCircle1 = CAShapeLayer ()
+        progressCircle1.path = circlePath1.cgPath
+        progressCircle1.strokeColor = UIColor.lightGray.cgColor
+        progressCircle1.fillColor = UIColor.clear.cgColor
+        progressCircle1.lineWidth = 11.0
+        
+        circle.layer.addSublayer(progressCircle1)
+    }
+    
+    // load animation circle
+    func loadFillCircle(){
+         let circle = self.circleVc!
         var progressCircle = CAShapeLayer()
         
         let circlePath = UIBezierPath(ovalIn: circle.bounds)
@@ -256,7 +340,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         progressCircle.path = circlePath.cgPath
         progressCircle.strokeColor = UIColor.green.cgColor
         progressCircle.fillColor = UIColor.clear.cgColor
-        progressCircle.lineWidth = 7.0
+        progressCircle.lineWidth = 9.0
         
         circle.layer.addSublayer(progressCircle)
         
@@ -269,9 +353,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         animation.isRemovedOnCompletion = false
         
         progressCircle.add(animation, forKey: "ani")
-        finished()
-        
     }
+    // animate loader view
     func annimateView(){
         self.innerVc.frame = CGRect(x: screenWidth, y: 150 , width: screenWidth, height: screenHeight)
         
