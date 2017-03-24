@@ -13,11 +13,13 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
     var iconArr = ["gps","volume","proximity","wifi"]
     var lblArr = ["Gps Test", "Volume Button Test", "Proximity Test", "Wifi Test"]
     var reportArr = ["accept","accept","reject","accept"]
+    var reportArr1 = [gpstestResult,volumeTest,proximityTestresult,wifiTestresult]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Reports"
+        self.navigationController?.navigationItem.hidesBackButton = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +36,16 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "reportCell", for: indexPath) as! ReportTableViewCell
         cell.iconImg.image = UIImage(named: iconArr[indexPath.row])
         cell.reportLbl.text = "\(lblArr[indexPath.row])"
-        cell.reportImg.image = UIImage(named: reportArr[indexPath.row])
+        if ((reportArr1[indexPath.row]) == "1")
+        {
+            cell.reportImg.image = UIImage(named: "accept")
+        }
+        else if ((reportArr1[indexPath.row]) == "0")
+        {
+            cell.reportImg.image = UIImage(named: "reject")
+        }
+
+       // cell.reportImg.image = UIImage(named: reportArr[indexPath.row])
         return cell
     }
     

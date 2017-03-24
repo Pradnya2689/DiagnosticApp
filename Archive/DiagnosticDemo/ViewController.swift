@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.swift
 //  DiagnosticDemo
 //
@@ -16,6 +16,12 @@ import CoreLocation
 let screenSize: CGRect = UIScreen.main.bounds
 let screenWidth = screenSize.width
 let screenHeight = screenSize.height
+ 
+ var gpstestResult : String!
+ var volumeTest : String!
+ var proximityTestresult : String!
+ var wifiTestresult : String!
+
 
 open class Toast{
     
@@ -206,8 +212,14 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     @IBOutlet var circleVc:UIView!
     @IBOutlet var buttonVc:UIView!
     @IBOutlet var innerVc:UIView!
+    @IBOutlet var buttonScroll:UIScrollView!
     
+    @IBOutlet var gpsBtn:UIButton!
+    @IBOutlet var wifiBtn : UIButton!
+    @IBOutlet var proximityBtn:UIButton!
+    @IBOutlet var volumeBtn:UIButton!
     
+    @IBOutlet var TestImage: UIImageView!
     var audioPlayer = AVAudioPlayer()
     var audioRecorder: AVAudioRecorder?
     var volumelvl1 = Float()
@@ -215,38 +227,38 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     var xcoord : Double!
     var ycoord : Double!
     var locationManager = CLLocationManager()
-
-  
+    
+    var volumeflagup : String!
+    var volumeflagdwn : String!
+    
+    @IBOutlet var resultLabel:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = ""
         // Do any additional setup after loading the view, typically from a nib.
-      
+        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
+        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
+        
+        loadEmptyCircle()
+        
+        
         
        
-        
-        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
-
-         volumelvl1 = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
-        do{
-            var audioSession =  AVAudioSession()
-            try audioSession.setActive(true)
-            audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
-        }catch{
-            print("could not start reachability notifier")
-        }
-        
-       self.proximityDetector()
-        self.wifi()
+//        self.wifi()
         self.gpsBtnAction()
+        
+        self.TestImage.image = UIImage(named: "gps")
         
 //        self.fillCircle {
 //           self.annimateView()
 //        }
       
+       
     }
         //volume button test
     func loadSEcondVC(){
+        
+        self.TestImage.image = UIImage(named: "proximity")
         self.gpsBtn.backgroundColor = UIColor.green
         self.volumeBtn.backgroundColor = UIColor.blue
         self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
@@ -256,14 +268,10 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
             
             self.loadEmptyCircle()
-            self.loadFillCircle()
-            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                // Your code with delay
-                self.annimateView()
-                self.loadThirdView()
-                
-            }
+            self.proximityDetector()
+            
+            
+            
         }, completion: nil)
       //  self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
         
@@ -271,6 +279,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
     //proximity test
     func loadThirdView(){
+        self.TestImage.image = UIImage(named: "volume")
         self.volumeBtn.backgroundColor = UIColor.green
         self.proximityBtn.backgroundColor = UIColor.blue
         self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
@@ -278,20 +287,18 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             //Set x position what ever you want
             self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
-            
+            self.resultLabel.text = ""
             self.loadEmptyCircle()
-            self.loadFillCircle()
-            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                // Your code with delay
-                self.annimateView()
-                self.loadFourthView()
-                
-            }
+            self.volumedetect()
+           
         }, completion: nil)
     }
     //wifi test
     func loadFourthView(){
+        
+       // Reachability.monitorReachabilityChanges()
+        
+        self.TestImage.image = UIImage(named: "wifi")
         self.proximityBtn.backgroundColor = UIColor.green
         self.wifiBtn.backgroundColor = UIColor.blue
         self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
@@ -301,17 +308,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             self.buttonVc.frame = CGRect(x: -280, y: 0, width: 603, height: 128);
             
             self.loadEmptyCircle()
-            self.loadFillCircle()
+            self.wifi()
+            
             
         }, completion: nil)
         
-        let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            // Your code with delay
-           let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
-            self.navigationController?.pushViewController(reportVC, animated: true)
-            
-        }
+       
     }
     // load empty gray circle
     func loadEmptyCircle(){
@@ -365,13 +367,59 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             
         }, completion: nil)
     }
+    //unused code
+    func fillCircle(finished: @escaping () -> Void){
+        let circle = self.circleVc!
+        var progressCircle1 = CAShapeLayer()
+        
+        let circlePath1 = UIBezierPath(ovalIn: circle.bounds)
+        
+        progressCircle1 = CAShapeLayer ()
+        progressCircle1.path = circlePath1.cgPath
+        progressCircle1.strokeColor = UIColor.lightGray.cgColor
+        progressCircle1.fillColor = UIColor.clear.cgColor
+        progressCircle1.lineWidth = 11.0
+        
+        circle.layer.addSublayer(progressCircle1)
+        var progressCircle = CAShapeLayer()
+        
+        let circlePath = UIBezierPath(ovalIn: circle.bounds)
+        
+        progressCircle = CAShapeLayer ()
+        progressCircle.path = circlePath.cgPath
+        progressCircle.strokeColor = UIColor.green.cgColor
+        progressCircle.fillColor = UIColor.clear.cgColor
+        progressCircle.lineWidth = 9.0
+        
+        circle.layer.addSublayer(progressCircle)
+        
+       
+    }
+
     
-     //# MARK: - Volume Detect
-    @IBAction func volumedetect(sender: AnyObject) {
+    //# MARK: - Volume Detect
+    func volumedetect() -> Void{
         
-        NotificationCenter.default.addObserver(self, selector: "volumeChanged:", name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
-        // Option #2
         
+        self.volumeflagup = "0"
+        self.volumeflagdwn = "0"
+//        NotificationCenter.default.addObserver(self, selector: "volumeChanged:", name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
+//        // Option #2
+//        
+//        do{
+//            var audioSession =  AVAudioSession()
+//            try audioSession.setActive(true)
+//            audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
+//        }catch{
+//            print("could not start reachability notifier")
+//        }
+//        
+//        //        audioSession.setActive(true, error: nil)
+        
+        
+        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
+        
+        volumelvl1 = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
         do{
             var audioSession =  AVAudioSession()
             try audioSession.setActive(true)
@@ -379,9 +427,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }catch{
             print("could not start reachability notifier")
         }
-        
-        //        audioSession.setActive(true, error: nil)
-        
+
         
         
     }
@@ -389,8 +435,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func volumeChanged(notification: NSNotification){
         print("got in here")
     }
-
-//    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
+    
+    //    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "outputVolume"{
             print("got in here")
@@ -401,22 +447,42 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             if (volumelvl > volumelvl1)
             {
                 print("up");
+                self.volumeflagup = "1"
                 //self.Vup.backgroundColor = UIColor.greenColor()
                 volumelvl1 = volumelvl
             }
                 
-            else
+            else if (volumelvl < volumelvl1)
             {
-               // self.Vdown.backgroundColor = UIColor.greenColor()
+                // self.Vdown.backgroundColor = UIColor.greenColor()
                 volumelvl1 = volumelvl
                 print("down");
+                self.volumeflagdwn = "1"
+                resultLabel.text = "Volume Test Done"
+                
             }
+            
+            
+            
+            if (self.volumeflagup == "1" && self.volumeflagdwn == "1")
+            {
+                self.loadFillCircle()
+                let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+                DispatchQueue.main.asyncAfter(deadline: when) {
+                    volumeTest  = "1"
+                    // Your code with delay
+                    self.annimateView()
+                    self.loadFourthView()
+                    
+                }
+            }
+            
             
             
             
         }
     }
-
+    
     //# MARK: - Proximity
     func proximityDetector() -> Void {
         
@@ -425,27 +491,37 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         if device.isProximityMonitoringEnabled {
             NotificationCenter.default.addObserver(self, selector: #selector(proximityChanged(notification:)), name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
         }
-
+        
     }
-
+    
     func proximityChanged(notification: NSNotification) {
         if let device = notification.object as? UIDevice {
             print("\(device) detected!")
+            proximityTestresult = "1"
+            resultLabel.text = "Proximity Sensors Test Pass "
+            self.loadFillCircle()
+            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                self.annimateView()
+                self.loadThirdView()
+                
+            }
         }
     }
-
+    
     //# MARK: - Wifi
     
-   // @IBAction func wifiBtnAction(_ sender: Any) {
+    // @IBAction func wifiBtnAction(_ sender: Any) {
     func wifi() -> Void {
         
-   
+        
         
         if Reachability.isConnectedToNetwork() == true
         {
             print("Internet Connection Available!")
-//            gpResult.text = "Internet Connection Available!"
-//            result.text = "Wifi Test Successful"
+            //            gpResult.text = "Internet Connection Available!"
+            //            result.text = "Wifi Test Successful"
             
             let wifiName = Reachability.getSSID()
             let wifiName1 = Reachability.fetchSSIDInfo()
@@ -458,27 +534,53 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 //// TODO: Alert -----
                 print("no wifi name")
                 
+              
+                
                 return
             }
             
             
             print("my network name is: \(wifiName!)")
+            wifiTestresult = "1"
+             resultLabel.text = "Wi-Fi Test Done"
+              self.loadFillCircle()
+            
+            
             Toast.sharedInstance.textOnlyToast("Wifi connected to \(wifiName!)", position: "bottom")
+            
+            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
+                self.navigationController?.pushViewController(reportVC, animated: true)
+                
+            }
             
         }
         else
         {
+            resultLabel.text = "Please check with your wifi settings"
+            
+            wifiTestresult = "0"
             print("Internet Connection not Available!")
-//            gpResult.text = "Internet Connection not Available!"
-//            result.text = "Please Enable your wifi"
+            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
+                self.navigationController?.pushViewController(reportVC, animated: true)
+                
+            }
+            print("Internet Connection not Available!")
+            //            gpResult.text = "Internet Connection not Available!"
+            //            result.text = "Please Enable your wifi"
             
         }
     }
-  
+    
     //# MARK: - GPS
-     func gpsBtnAction() -> Void {
+    func gpsBtnAction() -> Void {
         
-       // gpResult.text = "GPS Finding Location"
+        // gpResult.text = "GPS Finding Location"
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -492,12 +594,22 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         //gpResult.text = "locations = \(locValue.latitude) \(locValue.longitude)"
         
         if(locValue.latitude != 0 && locValue.longitude != 0){
-           // result.text = "GPS Test Successful"
-             print("GPS Test Successful")
+            locationManager.stopUpdatingLocation()
+            // result.text = "GPS Test Successful"
+             gpstestResult = "1"
+            print("GPS Test Successful")
+            resultLabel.text = "Location detected"
+            loadFillCircle()
+            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                self.annimateView()
+                self.loadSEcondVC()
+                
+            }
         }
         
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
