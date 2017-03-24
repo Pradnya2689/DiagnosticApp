@@ -24,7 +24,20 @@ import SystemConfiguration.CaptiveNetwork
 //    }
 //}
 
+let ReachabilityDidChangeNotificationName = "ReachabilityDidChangeNotification"
+
+enum ReachabilityStatus {
+    case notReachable
+    case reachableViaWiFi
+    case reachableViaWWAN
+}
+
 public class Reachability {
+    
+    private var networkReachability: SCNetworkReachability?
+    
+    
+    
     
     class func isConnectedToNetwork() -> Bool {
         
@@ -139,3 +152,4 @@ public class Reachability {
     
     
 }
+

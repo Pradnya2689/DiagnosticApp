@@ -12,6 +12,7 @@ import AVFoundation
 import MediaPlayer
 import CoreBluetooth
 import CoreLocation
+// import Reachability
 
 let screenSize: CGRect = UIScreen.main.bounds
 let screenWidth = screenSize.width
@@ -21,6 +22,8 @@ let screenHeight = screenSize.height
  var volumeTest : String!
  var proximityTestresult : String!
  var wifiTestresult : String!
+ 
+ var reachability = Reachability()
 
 
 open class Toast{
@@ -251,6 +254,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
 
     }
+    
+    func reachabilityStatusChanged(_ sender: NSNotification)
+    {
+//        guard let networkStatus = (sender.object as? Reachability)?.currentReachabilityStatus() else { return }
+//        updateInterfaceWithCurrent(networkStatus: networkStatus)
+    }
         //volume button test
     func loadSEcondVC(){
         let gifManager = SwiftyGifManager(memoryLimit:50)
@@ -432,7 +441,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         volumelvl1 = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
         do{
-            var audioSession =  AVAudioSession()
+           
             try audioSession.setActive(true)
             audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
         }catch{
@@ -465,11 +474,13 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 
             else if (volumelvl < volumelvl1)
             {
+               
                 // self.Vdown.backgroundColor = UIColor.greenColor()
                 volumelvl1 = volumelvl
                 print("down");
                 self.volumeflagdwn = "1"
                 resultLabel.text = "Volume Test Done"
+                
                 
             }
             
@@ -477,14 +488,23 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             
             if (self.volumeflagup == "1" && self.volumeflagdwn == "1")
             {
-                self.loadFillCircle()
-                let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
-                DispatchQueue.main.asyncAfter(deadline: when) {
-                    volumeTest  = "1"
-                    // Your code with delay
-                    self.annimateView()
-                    self.loadFourthView()
+            
+                do{
                     
+                    try audioSession.setActive(false)
+                    self.loadFillCircle()
+                    let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+                    DispatchQueue.main.asyncAfter(deadline: when) {
+                        volumeTest  = "1"
+                        // Your code with delay
+                        self.annimateView()
+                        self.loadFourthView()
+                        
+                    }
+                }
+                catch
+                {
+                
                 }
             }
             
@@ -497,7 +517,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //# MARK: - Proximity
     func proximityDetector() -> Void {
         
-        let device = UIDevice.current
+      //device = UIDevice.current
         device.isProximityMonitoringEnabled = true
         if device.isProximityMonitoringEnabled {
             NotificationCenter.default.addObserver(self, selector: #selector(proximityChanged(notification:)), name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
@@ -506,6 +526,9 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
     
     func proximityChanged(notification: NSNotification) {
+//        NotificationCenter.default.removeObserver(self, name:  NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
+        
+        device.isProximityMonitoringEnabled = false
         if let device = notification.object as? UIDevice {
             print("\(device) detected!")
             proximityTestresult = "1"
@@ -524,18 +547,61 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //# MARK: - Wifi
     
     // @IBAction func wifiBtnAction(_ sender: Any) {
-    func wifi() -> Void {
+    func wifi() -> Void
+    {
+//        let reachability = Reachability()!
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged),name: ReachabilityChangedNotification,object: reachability)
+//        do{
+//            try reachability.startNotifier()
+//        }catch{
+//            print("could not start reachability notifier")
+//        }
+//        
+//        reachability.whenReachable = { reachability in
+//            // this is called on a background thread, but UI updates must
+//            // be on the main thread, like this:
+//            DispatchQueue.main.async {
+//                if reachability.isReachableViaWiFi {
+//                    print("Reachable via WiFi")
+//                    
+//                  
+//                
+//                }
+//                else {
+//                    print("Reachable via Cellular")
+//                }
+//            }
+//        }
+//        reachability.whenUnreachable = { reachability in
+//            // this is called on a background thread, but UI updates must
+//            // be on the main thread, like this:
+//            DispatchQueue.main.async {
+//                print("Not reachable")
+//            }
+//        }
+//        
+//        do {
+//            try reachability.startNotifier()
+//        } catch {
+//            print("Unable to start notifier")
+//        }
+//        
         
         
         
-        if Reachability.isConnectedToNetwork() == true
+//        reachability = Reachability.forInternetConnection()
+//        reachability.startNotifier()
+       
+        if (Reachability.isConnectedToNetwork())
         {
             print("Internet Connection Available!")
             //            gpResult.text = "Internet Connection Available!"
             //            result.text = "Wifi Test Successful"
             
             let wifiName = Reachability.getSSID()
-            let wifiName1 = Reachability.fetchSSIDInfo()
+           // let wifiName = Reachability.fetchSSIDInfo()
+             let wifiName1 = Reachability.fetchSSIDInfo()
+           // let wifiName1 = Reachability.fetchSSIDInfo()
             
             //            let wifiName1 = Reachability.getUsedSSID(Reachability)
             
@@ -588,6 +654,21 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }
     }
     
+//    func reachabilityChanged(note: NSNotification) {
+//        
+//        let reachability = note.object as! Reachability
+//        
+//        if reachability.isReachable {
+//            if reachability.isReachableViaWiFi {
+//                print("Reachable via WiFi")
+//            } else {
+//                print("Reachable via Cellular")
+//            }
+//        } else {
+//            print("Network not reachable")
+//        }
+//    }
+    
     //# MARK: - GPS
     func gpsBtnAction() -> Void {
         
@@ -599,13 +680,15 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         locationManager.startUpdatingLocation()
     }
     func  locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        manager.stopUpdatingLocation()
+        manager.delegate = nil
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         //gpResult.text = "locations = \(locValue.latitude) \(locValue.longitude)"
         
         if(locValue.latitude != 0 && locValue.longitude != 0){
-            locationManager.stopUpdatingLocation()
+            
+           // locationManager.stopUpdatingLocation()
             // result.text = "GPS Test Successful"
              gpstestResult = "1"
            // self.annimateView()
