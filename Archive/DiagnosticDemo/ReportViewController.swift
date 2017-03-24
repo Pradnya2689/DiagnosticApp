@@ -10,8 +10,10 @@ import UIKit
 
 class ReportViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
 
+    @IBOutlet weak var reportTbl: UITableView!
+    
     var iconArr = ["gps","volume","proximity","wifi"]
-    var lblArr = ["Gps Test", "Volume Button Test", "Proximity Test", "Wifi Test"]
+    var lblArr = ["GPS Working", "Volume Button Working", "Proximity Working", "WiFi Working"]
     var reportArr = ["accept","accept","reject","accept"]
     var reportArr1 = [gpstestResult,volumeTest,proximityTestresult,wifiTestresult]
     
@@ -26,7 +28,24 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        let status = "Some features were not tested."
+//        return status
+//    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 40.0
+//    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 20))
+//        //btnView.backgroundColor = UIColor.blue
+//        let lbl = UILabel(
+//        btn.backgroundColor = UIColor.red
+//        btn.setTitle("Test Again", for: .normal)
+//        btnView.addSubview(btn)
+//
+//    
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -48,7 +67,7 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
        // cell.reportImg.image = UIImage(named: reportArr[indexPath.row])
         return cell
     }
-    
+
 
     /*
     // MARK: - Navigation

@@ -236,8 +236,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         super.viewDidLoad()
         self.title = ""
         // Do any additional setup after loading the view, typically from a nib.
-        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
-        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
+//        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
+//        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
         
         loadEmptyCircle()
         
@@ -261,11 +261,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.TestImage.image = UIImage(named: "proximity")
         self.gpsBtn.backgroundColor = UIColor.green
         self.volumeBtn.backgroundColor = UIColor.blue
-        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
+        //self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             //Set x position what ever you want
-            self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
+           // self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
             
             self.loadEmptyCircle()
             self.proximityDetector()
@@ -282,7 +282,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.TestImage.image = UIImage(named: "volume")
         self.volumeBtn.backgroundColor = UIColor.green
         self.proximityBtn.backgroundColor = UIColor.blue
-        self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
+        //self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             //Set x position what ever you want
@@ -301,11 +301,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.TestImage.image = UIImage(named: "wifi")
         self.proximityBtn.backgroundColor = UIColor.green
         self.wifiBtn.backgroundColor = UIColor.blue
-        self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
+        //self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             //Set x position what ever you want
-            self.buttonVc.frame = CGRect(x: -280, y: 0, width: 603, height: 128);
+            //self.buttonVc.frame = CGRect(x: -280, y: 0, width: 603, height: 128);
             
             self.loadEmptyCircle()
             self.wifi()
