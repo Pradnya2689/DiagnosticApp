@@ -286,8 +286,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             //Set x position what ever you want
-            self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
-            self.resultLabel.text = ""
+            //self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
+            
             self.loadEmptyCircle()
             self.volumedetect()
            

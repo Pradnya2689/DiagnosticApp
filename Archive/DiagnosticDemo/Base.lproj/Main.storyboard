@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-f4-55T">
-                                                <rect key="frame" x="456" y="39" width="50" height="50"/>
+                                                <rect key="frame" x="309" y="39" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="3j3-EK-SX3"/>
@@ -43,7 +43,7 @@
                                                 <state key="normal" image="wifi"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-io-nJo">
-                                                <rect key="frame" x="309" y="39" width="50" height="50"/>
+                                                <rect key="frame" x="211" y="39" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="4oZ-ut-kim"/>
@@ -52,7 +52,7 @@
                                                 <state key="normal" image="volume"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUi-WP-lDa">
-                                                <rect key="frame" x="162" y="39" width="50" height="50"/>
+                                                <rect key="frame" x="113" y="39" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="II3-eQ-eRc"/>
@@ -103,9 +103,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgn-Dh-ayg">
                                         <rect key="frame" x="88" y="70" width="200" height="200"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-SR-VzG">
-                                                <rect key="frame" x="60" y="60" width="95" height="95"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-SR-VzG">
+                                                <rect key="frame" x="52" y="53" width="96" height="95"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -160,9 +159,9 @@
                         <outlet property="circleVc" destination="vgn-Dh-ayg" id="yQF-oj-TOP"/>
                         <outlet property="gpsBtn" destination="gBR-Do-1hA" id="0Sc-pQ-5RI"/>
                         <outlet property="innerVc" destination="eBq-aw-bJW" id="GTy-Cq-rNt"/>
-                        <outlet property="proximityBtn" destination="XLO-io-nJo" id="YrA-dD-ct5"/>
+                        <outlet property="proximityBtn" destination="WUi-WP-lDa" id="Tt6-bq-RQC"/>
                         <outlet property="resultLabel" destination="lvB-hb-mtr" id="Ecs-ZH-PJv"/>
-                        <outlet property="volumeBtn" destination="WUi-WP-lDa" id="232-Na-Zyc"/>
+                        <outlet property="volumeBtn" destination="XLO-io-nJo" id="cgJ-sm-1q8"/>
                         <outlet property="wifiBtn" destination="bZd-f4-55T" id="aH7-Wr-Kr6"/>
                     </connections>
                 </viewController>
@@ -174,7 +173,7 @@
         <scene sceneID="7bj-ap-u14">
             <objects>
                 <navigationController id="crH-4b-9sO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OPg-b7-MeH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPg-b7-MeH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
