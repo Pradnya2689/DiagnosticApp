@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MyriadPro-Bold.otf</string>
+		<string>MyriadPro-It.otf</string>
+		<string>MyriadPro-Regular.otf</string>
+	</array>
 </dict>
 </plist>

@@ -17,6 +17,9 @@
 		4C60A6ED1E82AEE600D57B40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C60A6EB1E82AEE600D57B40 /* LaunchScreen.storyboard */; };
 		4C60A6F81E82AEE600D57B40 /* DiagnosticDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60A6F71E82AEE600D57B40 /* DiagnosticDemoTests.swift */; };
 		4C60A7031E82AEE600D57B40 /* DiagnosticDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60A7021E82AEE600D57B40 /* DiagnosticDemoUITests.swift */; };
+		4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */; };
+		4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */; };
+		4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		4C60A6FE1E82AEE600D57B40 /* DiagnosticDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiagnosticDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C60A7021E82AEE600D57B40 /* DiagnosticDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticDemoUITests.swift; sourceTree = "<group>"; };
 		4C60A7041E82AEE600D57B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
+		4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
+		4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +112,15 @@
 				4C60A6DF1E82AEE500D57B40 /* AppDelegate.swift */,
 				4C60A6E11E82AEE600D57B40 /* ViewController.swift */,
 				4C3EABB21E83D35C00CC2911 /* ReportTableViewCell.swift */,
+				4C3EABB61E83D3B200CC2911 /* ReportViewController.swift */,
 				4C60A6E31E82AEE600D57B40 /* Main.storyboard */,
+				4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */,
+				4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */,
+				4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */,
 				4C60A6E91E82AEE600D57B40 /* Assets.xcassets */,
 				4C60A6EB1E82AEE600D57B40 /* LaunchScreen.storyboard */,
 				4C60A6EE1E82AEE600D57B40 /* Info.plist */,
 				4C60A6E61E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld */,
-				4C3EABB61E83D3B200CC2911 /* ReportViewController.swift */,
 			);
 			path = DiagnosticDemo;
 			sourceTree = "<group>";
@@ -242,9 +251,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */,
 				4C60A6ED1E82AEE600D57B40 /* LaunchScreen.storyboard in Resources */,
 				4C60A6EA1E82AEE600D57B40 /* Assets.xcassets in Resources */,
+				4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */,
 				4C60A6E51E82AEE600D57B40 /* Main.storyboard in Resources */,
+				4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
