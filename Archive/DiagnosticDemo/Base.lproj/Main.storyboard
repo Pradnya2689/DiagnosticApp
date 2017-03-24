@@ -28,41 +28,41 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhG-u7-Ogr">
                                         <rect key="frame" x="0.0" y="0.0" width="603" height="128"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-f4-55T">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-f4-55T">
                                                 <rect key="frame" x="456" y="39" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="3j3-EK-SX3"/>
                                                     <constraint firstAttribute="height" constant="50" id="O8s-El-GZy"/>
                                                 </constraints>
-                                                <state key="normal" title="4"/>
+                                                <state key="normal" image="wifi"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-io-nJo">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-io-nJo">
                                                 <rect key="frame" x="309" y="39" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="4oZ-ut-kim"/>
                                                     <constraint firstAttribute="height" constant="50" id="jFd-Mf-LXc"/>
                                                 </constraints>
-                                                <state key="normal" title="3"/>
+                                                <state key="normal" image="proximity"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUi-WP-lDa">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUi-WP-lDa">
                                                 <rect key="frame" x="162" y="39" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="II3-eQ-eRc"/>
                                                     <constraint firstAttribute="height" constant="50" id="MJK-X2-mA1"/>
                                                 </constraints>
-                                                <state key="normal" title="2"/>
+                                                <state key="normal" image="volume"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBR-Do-1hA">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBR-Do-1hA">
                                                 <rect key="frame" x="15" y="39" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="Jfn-WO-hFc"/>
                                                     <constraint firstAttribute="height" constant="50" id="Mie-GT-Ow6"/>
                                                 </constraints>
-                                                <state key="normal" title="1"/>
+                                                <state key="normal" image="gps"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,9 +98,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgn-Dh-ayg">
                                         <rect key="frame" x="80" y="77" width="215" height="215"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-SR-VzG">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-SR-VzG">
                                                 <rect key="frame" x="60" y="60" width="95" height="95"/>
-                                                <color key="backgroundColor" red="0.89160657050000003" green="0.0" blue="0.0083470027530000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -272,10 +271,19 @@
                             <constraint firstItem="sCv-9Q-R3S" firstAttribute="top" secondItem="yII-4J-7sA" secondAttribute="bottom" id="ZMP-EC-Kj0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="reportTbl" destination="yII-4J-7sA" id="pjL-tZ-wVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsL-mJ-Sbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-122" y="-31"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gps" width="24" height="24"/>
+        <image name="proximity" width="24" height="24"/>
+        <image name="volume" width="160" height="210"/>
+        <image name="wifi" width="24" height="24"/>
+    </resources>
 </document>
