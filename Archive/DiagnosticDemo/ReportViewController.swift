@@ -21,7 +21,8 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Quality Check Complete"
-        
+        self.navigationItem.setHidesBackButton(true, animated:true);
+
         let btnView = UIView(frame: CGRect(x: 0, y: screenHeight-60, width: screenWidth, height: 60))
         //btnView.backgroundColor = UIColor.blue
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))

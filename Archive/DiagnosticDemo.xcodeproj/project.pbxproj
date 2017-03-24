@@ -17,14 +17,15 @@
 		4C60A6ED1E82AEE600D57B40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C60A6EB1E82AEE600D57B40 /* LaunchScreen.storyboard */; };
 		4C60A6F81E82AEE600D57B40 /* DiagnosticDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60A6F71E82AEE600D57B40 /* DiagnosticDemoTests.swift */; };
 		4C60A7031E82AEE600D57B40 /* DiagnosticDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60A7021E82AEE600D57B40 /* DiagnosticDemoUITests.swift */; };
+		4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */; };
+		4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */; };
+		4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */; };
+		D962D79D1E854B6100FB0E23 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962D79C1E854B6100FB0E23 /* Reachability.swift */; };
 		D9D04A971E83AB5900AA5EDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */; };
 		D9D04A9A1E83AB6500AA5EDB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */; };
 		D9D04A9D1E83AB7100AA5EDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */; };
 		D9D04A9E1E83AB7100AA5EDB /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9C1E83AB7100AA5EDB /* AVKit.framework */; };
-		D9D04AA01E83D1BD00AA5EDB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D04A9F1E83D1BD00AA5EDB /* Reachability.swift */; };
-		4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */; };
-		4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */; };
-		4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */; };
+		D9D04AA41E85228400AA5EDB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D04AA31E85228400AA5EDB /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,15 +62,18 @@
 		4C60A6FE1E82AEE600D57B40 /* DiagnosticDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiagnosticDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C60A7021E82AEE600D57B40 /* DiagnosticDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticDemoUITests.swift; sourceTree = "<group>"; };
 		4C60A7041E82AEE600D57B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
+		4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
+		4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		D962D79C1E854B6100FB0E23 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D9D04A961E83AB5900AA5EDB /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D9D04A9C1E83AB7100AA5EDB /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		D9D04A9F1E83D1BD00AA5EDB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
-		4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
-		4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		D9D04AA11E85228300AA5EDB /* DiagnosticDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiagnosticDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9D04AA21E85228400AA5EDB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D9D04AA31E85228400AA5EDB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +129,9 @@
 		4C60A6DE1E82AEE500D57B40 /* DiagnosticDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D9D04A9F1E83D1BD00AA5EDB /* Reachability.swift */,
+				D962D79C1E854B6100FB0E23 /* Reachability.swift */,
+				D9D04AA21E85228400AA5EDB /* Reachability.h */,
+				D9D04AA31E85228400AA5EDB /* Reachability.m */,
 				4C60A6DF1E82AEE500D57B40 /* AppDelegate.swift */,
 				4C60A6E11E82AEE600D57B40 /* ViewController.swift */,
 				4C3EABB21E83D35C00CC2911 /* ReportTableViewCell.swift */,
@@ -138,6 +144,7 @@
 				4C60A6EB1E82AEE600D57B40 /* LaunchScreen.storyboard */,
 				4C60A6EE1E82AEE600D57B40 /* Info.plist */,
 				4C60A6E61E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld */,
+				D9D04AA11E85228300AA5EDB /* DiagnosticDemo-Bridging-Header.h */,
 			);
 			path = DiagnosticDemo;
 			sourceTree = "<group>";
@@ -196,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C60A70A1E82AEE600D57B40 /* Build configuration list for PBXNativeTarget "DiagnosticDemoTests" */;
 			buildPhases = (
+				0D8914CD081424F7B875AD51 /* [CP] Check Pods Manifest.lock */,
 				4C60A6EF1E82AEE600D57B40 /* Sources */,
 				4C60A6F01E82AEE600D57B40 /* Frameworks */,
 				4C60A6F11E82AEE600D57B40 /* Resources */,
+				92ED49DC43BA6B406AE63FD3 /* [CP] Embed Pods Frameworks */,
+				B6730124506274C317C83621 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C60A70D1E82AEE600D57B40 /* Build configuration list for PBXNativeTarget "DiagnosticDemoUITests" */;
 			buildPhases = (
+				569C5B118854C0504DD8DE0E /* [CP] Check Pods Manifest.lock */,
 				4C60A6FA1E82AEE600D57B40 /* Sources */,
 				4C60A6FB1E82AEE600D57B40 /* Frameworks */,
 				4C60A6FC1E82AEE600D57B40 /* Resources */,
+				08B0202793A0FA724E0A74C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,6 +253,7 @@
 					4C60A6DB1E82AEE500D57B40 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = A8U8Q2EEBA;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					4C60A6F21E82AEE600D57B40 = {
@@ -307,14 +320,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08B0202793A0FA724E0A74C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiagnosticDemoUITests/Pods-DiagnosticDemoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D8914CD081424F7B875AD51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		569C5B118854C0504DD8DE0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		92ED49DC43BA6B406AE63FD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiagnosticDemoTests/Pods-DiagnosticDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6730124506274C317C83621 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiagnosticDemoTests/Pods-DiagnosticDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4C60A6D81E82AEE500D57B40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D962D79D1E854B6100FB0E23 /* Reachability.swift in Sources */,
 				4C60A6E81E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld in Sources */,
 				4C60A6E21E82AEE600D57B40 /* ViewController.swift in Sources */,
-				D9D04AA01E83D1BD00AA5EDB /* Reachability.swift in Sources */,
+				D9D04AA41E85228400AA5EDB /* Reachability.m in Sources */,
 				4C60A6E01E82AEE500D57B40 /* AppDelegate.swift in Sources */,
 				4C3EABB71E83D3B200CC2911 /* ReportViewController.swift in Sources */,
 				4C3EABB31E83D35C00CC2911 /* ReportTableViewCell.swift in Sources */,
@@ -475,6 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A8U8Q2EEBA;
@@ -483,6 +576,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ingrammicro.diagnosticApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DiagnosticDemo/DiagnosticDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -491,6 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A8U8Q2EEBA;
@@ -499,6 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ingrammicro.diagnosticApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DiagnosticDemo/DiagnosticDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

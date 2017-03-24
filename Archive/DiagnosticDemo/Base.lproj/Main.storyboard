@@ -173,7 +173,7 @@
         <scene sceneID="7bj-ap-u14">
             <objects>
                 <navigationController id="crH-4b-9sO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPg-b7-MeH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OPg-b7-MeH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
