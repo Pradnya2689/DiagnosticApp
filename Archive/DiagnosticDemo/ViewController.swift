@@ -116,11 +116,11 @@ open class Toast{
         label.layer.shadowOffset = CGSize(width: 4, height: 3)
         label.layer.shadowOpacity = 0.3
         if(position == "bottom"){
-            label.frame = CGRect(x: (screenWidth-200)/2,y: screenHeight-50, width: 200, height: sizeoftxt.height)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: screenHeight-50, width: 200, height: sizeoftxt.height+10)
         }else if(position == "center"){
-            label.frame = CGRect(x: (screenWidth-200)/2,y: (screenHeight-sizeoftxt.height)/2, width: 200, height: sizeoftxt.height)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: (screenHeight-sizeoftxt.height)/2, width: 200, height: sizeoftxt.height+10)
         }else{
-            label.frame = CGRect(x: (screenWidth-200)/2,y: 120, width: 200, height: sizeoftxt.height)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: 120, width: 200, height: sizeoftxt.height+10)
         }
         //label.frame = CGRectMake((screenWidth-200)/2,(screenHeight-sizeoftxt.height)/2, 200, sizeoftxt.height)
         label.layer.masksToBounds = true
@@ -230,66 +230,72 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     
     var volumeflagup : String!
     var volumeflagdwn : String!
-    
+    @IBOutlet var gifImg:UIImageView!
     @IBOutlet var resultLabel:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = ""
-        // Do any additional setup after loading the view, typically from a nib.
-//        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
-//        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
-        
+        self.title = "Quality Check"
         loadEmptyCircle()
+        self.resultLabel.text = "GPS Test is in progress..Ensure that device's GPS feature is ON."
         
         
+        let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+           
+            self.gpsBtnAction()
+        }
         
-       
-//        self.wifi()
-        self.gpsBtnAction()
         
         self.TestImage.image = UIImage(named: "gps")
         
-//        self.fillCircle {
-//           self.annimateView()
-//        }
-      
-       
+
     }
         //volume button test
     func loadSEcondVC(){
-        
+        let gifManager = SwiftyGifManager(memoryLimit:50)
+        // let gif = UIImage(gifName: "motion_gesture_aircall6.gif")
+        let gifImage = UIImage(gifName: "motion_gesture_aircall6.gif")
+        self.gifImg.setGifImage(gifImage, manager: gifManager, loopCount: 20)
+        self.resultLabel.text = "Hover your hand on device."
         self.TestImage.image = UIImage(named: "proximity")
         self.gpsBtn.backgroundColor = UIColor.green
         self.volumeBtn.backgroundColor = UIColor.blue
         //self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
-            //Set x position what ever you want
-           // self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
             
             self.loadEmptyCircle()
-            self.proximityDetector()
+            
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                
+               self.proximityDetector()
+            }
             
             
             
         }, completion: nil)
-      //  self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
-        
         
     }
     //proximity test
     func loadThirdView(){
+        self.resultLabel.text = "Press Volume Up and Volume Down Buttons of your phone."
         self.TestImage.image = UIImage(named: "volume")
         self.volumeBtn.backgroundColor = UIColor.green
         self.proximityBtn.backgroundColor = UIColor.blue
         //self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
-            //Set x position what ever you want
-            //self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
+         
             
             self.loadEmptyCircle()
-            self.volumedetect()
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when) {
+               self.volumedetect()
+            }
+            
+            
            
         }, completion: nil)
     }
@@ -297,7 +303,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func loadFourthView(){
         
        // Reachability.monitorReachabilityChanges()
-        
+        self.resultLabel.text = "Wifi Test is in Progress.."
         self.TestImage.image = UIImage(named: "wifi")
         self.proximityBtn.backgroundColor = UIColor.green
         self.wifiBtn.backgroundColor = UIColor.blue
@@ -308,7 +314,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             //self.buttonVc.frame = CGRect(x: -280, y: 0, width: 603, height: 128);
             
             self.loadEmptyCircle()
-            self.wifi()
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                 self.wifi()
+            }
+
+           
             
             
         }, completion: nil)
@@ -342,7 +353,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         progressCircle.path = circlePath.cgPath
         progressCircle.strokeColor = UIColor.green.cgColor
         progressCircle.fillColor = UIColor.clear.cgColor
-        progressCircle.lineWidth = 9.0
+        progressCircle.lineWidth = 10.0
         
         circle.layer.addSublayer(progressCircle)
         
@@ -350,7 +361,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
         animation.toValue = 1
-        animation.duration = 3
+        animation.duration = 2
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         
@@ -498,7 +509,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         if let device = notification.object as? UIDevice {
             print("\(device) detected!")
             proximityTestresult = "1"
-            resultLabel.text = "Proximity Sensors Test Pass "
+            resultLabel.text = "Proximity Sensors Test Successful. "
             self.loadFillCircle()
             let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
@@ -542,7 +553,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             
             print("my network name is: \(wifiName!)")
             wifiTestresult = "1"
-             resultLabel.text = "Wi-Fi Test Done"
+             resultLabel.text = "Wi-Fi Test Completed"
               self.loadFillCircle()
             
             
@@ -597,16 +608,37 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             locationManager.stopUpdatingLocation()
             // result.text = "GPS Test Successful"
              gpstestResult = "1"
+           // self.annimateView()
             print("GPS Test Successful")
-            resultLabel.text = "Location detected"
+            self.loadFillCircle()
+            
+            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+              //  self.loadSEcondVC()
+                
+            }
+            let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when1) {
+                // Your code with delay
+               //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+                self.loadSEcondVC()
+                
+            }
+        }else{
+            gpstestResult = "0"
+           // self.annimateView()
+            
             loadFillCircle()
             let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
                 // Your code with delay
-                self.annimateView()
+                self.resultLabel.text = "Failed to find location."
                 self.loadSEcondVC()
                 
             }
+
         }
         
     }

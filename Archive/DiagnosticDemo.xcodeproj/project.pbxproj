@@ -17,14 +17,19 @@
 		4C60A6ED1E82AEE600D57B40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C60A6EB1E82AEE600D57B40 /* LaunchScreen.storyboard */; };
 		4C60A6F81E82AEE600D57B40 /* DiagnosticDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60A6F71E82AEE600D57B40 /* DiagnosticDemoTests.swift */; };
 		4C60A7031E82AEE600D57B40 /* DiagnosticDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60A7021E82AEE600D57B40 /* DiagnosticDemoUITests.swift */; };
+		4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */; };
+		4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */; };
+		4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */; };
+		4C8A5ADB1E8537890017CBF2 /* motion_gesture_aircall6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD51E8537890017CBF2 /* motion_gesture_aircall6.gif */; };
+		4C8A5ADC1E8537890017CBF2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD61E8537890017CBF2 /* Info.plist */; };
+		4C8A5ADD1E8537890017CBF2 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */; };
+		4C8A5ADE1E8537890017CBF2 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */; };
+		4C8A5ADF1E8537890017CBF2 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */; };
 		D9D04A971E83AB5900AA5EDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */; };
 		D9D04A9A1E83AB6500AA5EDB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */; };
 		D9D04A9D1E83AB7100AA5EDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */; };
 		D9D04A9E1E83AB7100AA5EDB /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9C1E83AB7100AA5EDB /* AVKit.framework */; };
 		D9D04AA01E83D1BD00AA5EDB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D04A9F1E83D1BD00AA5EDB /* Reachability.swift */; };
-		4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */; };
-		4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */; };
-		4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,15 +66,21 @@
 		4C60A6FE1E82AEE600D57B40 /* DiagnosticDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiagnosticDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C60A7021E82AEE600D57B40 /* DiagnosticDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticDemoUITests.swift; sourceTree = "<group>"; };
 		4C60A7041E82AEE600D57B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
+		4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
+		4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		4C8A5AD51E8537890017CBF2 /* motion_gesture_aircall6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = motion_gesture_aircall6.gif; sourceTree = "<group>"; };
+		4C8A5AD61E8537890017CBF2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8A5AD71E8537890017CBF2 /* SwiftyGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyGif.h; sourceTree = "<group>"; };
+		4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
+		4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
+		4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
 		D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D9D04A961E83AB5900AA5EDB /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D9D04A9C1E83AB7100AA5EDB /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		D9D04A9F1E83D1BD00AA5EDB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
-		4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
-		4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +115,12 @@
 		4C60A6D31E82AEE500D57B40 = {
 			isa = PBXGroup;
 			children = (
+				4C8A5AD51E8537890017CBF2 /* motion_gesture_aircall6.gif */,
+				4C8A5AD61E8537890017CBF2 /* Info.plist */,
+				4C8A5AD71E8537890017CBF2 /* SwiftyGif.h */,
+				4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */,
+				4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */,
+				4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */,
 				4C60A6DE1E82AEE500D57B40 /* DiagnosticDemo */,
 				4C60A6F61E82AEE600D57B40 /* DiagnosticDemoTests */,
 				4C60A7011E82AEE600D57B40 /* DiagnosticDemoUITests */,
@@ -282,12 +299,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8A5ADC1E8537890017CBF2 /* Info.plist in Resources */,
 				4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */,
 				4C60A6ED1E82AEE600D57B40 /* LaunchScreen.storyboard in Resources */,
 				4C60A6EA1E82AEE600D57B40 /* Assets.xcassets in Resources */,
 				4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */,
 				4C60A6E51E82AEE600D57B40 /* Main.storyboard in Resources */,
 				4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */,
+				4C8A5ADB1E8537890017CBF2 /* motion_gesture_aircall6.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,9 +333,12 @@
 			files = (
 				4C60A6E81E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld in Sources */,
 				4C60A6E21E82AEE600D57B40 /* ViewController.swift in Sources */,
+				4C8A5ADE1E8537890017CBF2 /* UIImage+SwiftyGif.swift in Sources */,
 				D9D04AA01E83D1BD00AA5EDB /* Reachability.swift in Sources */,
 				4C60A6E01E82AEE500D57B40 /* AppDelegate.swift in Sources */,
 				4C3EABB71E83D3B200CC2911 /* ReportViewController.swift in Sources */,
+				4C8A5ADD1E8537890017CBF2 /* SwiftyGifManager.swift in Sources */,
+				4C8A5ADF1E8537890017CBF2 /* UIImageView+SwiftyGif.swift in Sources */,
 				4C3EABB31E83D35C00CC2911 /* ReportTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
