@@ -20,8 +20,17 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = "Reports"
-        self.navigationController?.navigationItem.hidesBackButton = true
+        self.title = "Quality Check Complete"
+        
+        let btnView = UIView(frame: CGRect(x: 0, y: screenHeight-60, width: screenWidth, height: 60))
+        //btnView.backgroundColor = UIColor.blue
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
+        btn.backgroundColor = UIColor.red
+        btn.setTitle("Test Again", for: .normal)
+        btnView.addSubview(btn)
+        
+        self.view.addSubview(btnView)
+        self.view.bringSubview(toFront: btnView)
     }
     
     override func didReceiveMemoryWarning() {
