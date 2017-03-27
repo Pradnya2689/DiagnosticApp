@@ -20,7 +20,8 @@
 		4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */; };
 		4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */; };
 		4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */; };
-		D962D79D1E854B6100FB0E23 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962D79C1E854B6100FB0E23 /* Reachability.swift */; };
+		D962D7E01E88F26800FB0E23 /* Reachability2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962D7DF1E88F26800FB0E23 /* Reachability2.swift */; };
+		D962D7E21E88F26E00FB0E23 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962D7E11E88F26E00FB0E23 /* Reachability.swift */; };
 		D9D04A971E83AB5900AA5EDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */; };
 		D9D04A9A1E83AB6500AA5EDB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */; };
 		D9D04A9D1E83AB7100AA5EDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */; };
@@ -65,7 +66,8 @@
 		4C8A5AB51E84EEDC0017CBF2 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
 		4C8A5AB61E84EEDC0017CBF2 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
 		4C8A5AB71E84EEDC0017CBF2 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
-		D962D79C1E854B6100FB0E23 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		D962D7DF1E88F26800FB0E23 /* Reachability2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability2.swift; sourceTree = "<group>"; };
+		D962D7E11E88F26E00FB0E23 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D9D04A961E83AB5900AA5EDB /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -129,7 +131,8 @@
 		4C60A6DE1E82AEE500D57B40 /* DiagnosticDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D962D79C1E854B6100FB0E23 /* Reachability.swift */,
+				D962D7E11E88F26E00FB0E23 /* Reachability.swift */,
+				D962D7DF1E88F26800FB0E23 /* Reachability2.swift */,
 				D9D04AA21E85228400AA5EDB /* Reachability.h */,
 				D9D04AA31E85228400AA5EDB /* Reachability.m */,
 				4C60A6DF1E82AEE500D57B40 /* AppDelegate.swift */,
@@ -403,12 +406,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D962D79D1E854B6100FB0E23 /* Reachability.swift in Sources */,
 				4C60A6E81E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld in Sources */,
 				4C60A6E21E82AEE600D57B40 /* ViewController.swift in Sources */,
 				D9D04AA41E85228400AA5EDB /* Reachability.m in Sources */,
 				4C60A6E01E82AEE500D57B40 /* AppDelegate.swift in Sources */,
 				4C3EABB71E83D3B200CC2911 /* ReportViewController.swift in Sources */,
+				D962D7E01E88F26800FB0E23 /* Reachability2.swift in Sources */,
+				D962D7E21E88F26E00FB0E23 /* Reachability.swift in Sources */,
 				4C3EABB31E83D35C00CC2911 /* ReportTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

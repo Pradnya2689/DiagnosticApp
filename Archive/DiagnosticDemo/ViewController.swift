@@ -227,6 +227,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     var audioRecorder: AVAudioRecorder?
     var volumelvl1 = Float()
     
+    @IBOutlet var EndTaskBtn: UIButton!
     var xcoord : Double!
     var ycoord : Double!
     var locationManager = CLLocationManager()
@@ -238,10 +239,13 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     
      var audioSession =  AVAudioSession()
     
+    let reachability = Reachability()!
+    
     @IBOutlet var resultLabel:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = ""
+        self.EndTaskBtn.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
 //        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
 //        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
@@ -264,6 +268,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
 //           self.annimateView()
 //        }
       
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
        
     }
     
@@ -546,6 +555,13 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     // @IBAction func wifiBtnAction(_ sender: Any) {
     func wifi() -> Void
     {
+        self.EndTaskBtn.isHidden = false
+        NotificationCenter.default.addObserver(self, selector:  #selector(ViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
+        do{
+            try reachability.startNotifier()
+        }catch{
+            print("could not start reachability notifier")
+        }
 //        let reachability = Reachability()!
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged),name: ReachabilityChangedNotification,object: reachability)
 //        do{
@@ -589,15 +605,15 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
 //        reachability = Reachability.forInternetConnection()
 //        reachability.startNotifier()
        
-        if (Reachability.isConnectedToNetwork())
+        if (Reachability2.isConnectedToNetwork())
         {
             print("Internet Connection Available!")
             //            gpResult.text = "Internet Connection Available!"
             //            result.text = "Wifi Test Successful"
             
-            let wifiName = Reachability.getSSID()
+            let wifiName = Reachability2.getSSID()
            // let wifiName = Reachability.fetchSSIDInfo()
-             let wifiName1 = Reachability.fetchSSIDInfo()
+             let wifiName1 = Reachability2.fetchSSIDInfo()
            // let wifiName1 = Reachability.fetchSSIDInfo()
             
             //            let wifiName1 = Reachability.getUsedSSID(Reachability)
@@ -637,6 +653,74 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             
             wifiTestresult = "0"
             print("Internet Connection not Available!")
+//            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+//            DispatchQueue.main.asyncAfter(deadline: when) {
+//                // Your code with delay
+//                let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
+//                self.navigationController?.pushViewController(reportVC, animated: true)
+//                
+//            }
+            print("Internet Connection not Available!")
+            //            gpResult.text = "Internet Connection not Available!"
+            //            result.text = "Please Enable your wifi"
+            
+        }
+    }
+    func reachabilityChanged(_ sender: NSNotification) {
+        
+        let reachability = sender.object as! Reachability
+        
+       /* let wifiName = Reachability2.getSSID()
+        // let wifiName = Reachability.fetchSSIDInfo()
+        let wifiName1 = Reachability2.fetchSSIDInfo()
+        
+        print(wifiName!)
+        print(wifiName1)
+        
+        if reachability.isReachable {
+            if reachability.isReachableViaWiFi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        } else {
+            print("Network not reachable")
+        }*/
+        
+        
+        if (Reachability2.isConnectedToNetwork())
+        {
+            print("Internet Connection Available!")
+            //            gpResult.text = "Internet Connection Available!"
+            //            result.text = "Wifi Test Successful"
+            
+            let wifiName = Reachability2.getSSID()
+            // let wifiName = Reachability.fetchSSIDInfo()
+            let wifiName1 = Reachability2.fetchSSIDInfo()
+            // let wifiName1 = Reachability.fetchSSIDInfo()
+            
+            //            let wifiName1 = Reachability.getUsedSSID(Reachability)
+            
+            
+            guard wifiName != nil else {
+                
+                //// TODO: Alert -----
+                print("no wifi name")
+                
+                
+                
+                return
+            }
+            
+            
+            print("my network name is: \(wifiName!)")
+            wifiTestresult = "1"
+            resultLabel.text = "Wi-Fi Test Done"
+            self.loadFillCircle()
+            
+            
+            Toast.sharedInstance.textOnlyToast("Wifi connected to \(wifiName!)", position: "bottom")
+            
             let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
                 // Your code with delay
@@ -644,13 +728,28 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 self.navigationController?.pushViewController(reportVC, animated: true)
                 
             }
+            
+        }
+        else
+        {
+            resultLabel.text = "Please check with your wifi settings"
+            
+            wifiTestresult = "0"
+            print("Internet Connection not Available!")
+//            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+//            DispatchQueue.main.asyncAfter(deadline: when) {
+//                // Your code with delay
+//                let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
+//                self.navigationController?.pushViewController(reportVC, animated: true)
+            
+            }
             print("Internet Connection not Available!")
             //            gpResult.text = "Internet Connection not Available!"
             //            result.text = "Please Enable your wifi"
             
-        }
+       // }
+
     }
-    
 //    func reachabilityChanged(note: NSNotification) {
 //        
 //        let reachability = note.object as! Reachability

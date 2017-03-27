@@ -125,16 +125,31 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-hb-MAm">
+                                        <rect key="frame" x="143" y="396" width="89" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0047743055559999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="01a-oa-N5n"/>
+                                            <constraint firstAttribute="width" constant="89" id="5D0-fr-nLf"/>
+                                        </constraints>
+                                        <state key="normal" title="END TEST">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8I5-hb-MAm" secondAttribute="bottom" constant="81" id="4hE-b5-O8O"/>
                                     <constraint firstItem="lvB-hb-mtr" firstAttribute="trailing" secondItem="eBq-aw-bJW" secondAttribute="trailingMargin" id="Fs7-SE-1pd"/>
                                     <constraint firstItem="vgn-Dh-ayg" firstAttribute="top" secondItem="eBq-aw-bJW" secondAttribute="top" constant="70" id="IRC-ZM-cwT"/>
                                     <constraint firstItem="vgn-Dh-ayg" firstAttribute="centerX" secondItem="lvB-hb-mtr" secondAttribute="centerX" id="J91-Zg-sMd"/>
+                                    <constraint firstItem="8I5-hb-MAm" firstAttribute="top" secondItem="lvB-hb-mtr" secondAttribute="bottom" constant="16" id="QlV-In-53M"/>
+                                    <constraint firstAttribute="trailing" secondItem="8I5-hb-MAm" secondAttribute="trailing" constant="143" id="WVw-ez-PGH"/>
                                     <constraint firstItem="vgn-Dh-ayg" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leading" constant="88" id="ZEz-WU-F0k"/>
                                     <constraint firstItem="lvB-hb-mtr" firstAttribute="top" secondItem="vgn-Dh-ayg" secondAttribute="bottom" constant="50" id="b5s-d2-BlE"/>
                                     <constraint firstItem="lvB-hb-mtr" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leadingMargin" id="cg3-ea-9mf"/>
                                     <constraint firstAttribute="bottom" secondItem="lvB-hb-mtr" secondAttribute="bottom" constant="127" id="o8K-He-Ucv"/>
+                                    <constraint firstItem="8I5-hb-MAm" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leading" constant="143" id="pR1-PU-SFq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -153,6 +168,7 @@
                     <navigationItem key="navigationItem" id="rkD-Kx-xgC"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="EndTaskBtn" destination="8I5-hb-MAm" id="9bl-SK-UcJ"/>
                         <outlet property="TestImage" destination="z6X-SR-VzG" id="K9G-Ni-NYC"/>
                         <outlet property="buttonScroll" destination="lt9-JX-dQr" id="Oy1-Ah-EWz"/>
                         <outlet property="buttonVc" destination="qhG-u7-Ogr" id="Wr2-Zj-nIB"/>
@@ -173,7 +189,7 @@
         <scene sceneID="7bj-ap-u14">
             <objects>
                 <navigationController id="crH-4b-9sO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OPg-b7-MeH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPg-b7-MeH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
