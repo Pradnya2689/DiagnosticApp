@@ -614,25 +614,18 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         if (Reachability2.isConnectedToNetwork())
         {
             print("Internet Connection Available!")
-            //            gpResult.text = "Internet Connection Available!"
-            //            result.text = "Wifi Test Successful"
+          
             
             let wifiName = Reachability2.getSSID()
              let wifiName1 = Reachability2.fetchSSIDInfo()
-           
-            
             
             guard wifiName != nil else {
                 
-                //// TODO: Alert -----
                 print("no wifi name")
-                
-              
                 
                 return
             }
-            
-            
+        
             print("my network name is: \(wifiName!)")
             wifiTestresult = "1"
              resultLabel.text = "Wi-Fi Test Completed"
@@ -656,16 +649,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
              self.EndTaskBtn.isHidden = false
             wifiTestresult = "0"
             print("Internet Connection not Available!")
-//            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
-//            DispatchQueue.main.asyncAfter(deadline: when) {
-//                // Your code with delay
-//                let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
-//                self.navigationController?.pushViewController(reportVC, animated: true)
-//                
-//            }
-            print("Internet Connection not Available!")
-            //            gpResult.text = "Internet Connection not Available!"
-            //            result.text = "Please Enable your wifi"
+
+            
             
         }
     }
