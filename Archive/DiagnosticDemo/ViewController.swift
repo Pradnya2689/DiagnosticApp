@@ -356,7 +356,6 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             DispatchQueue.main.asyncAfter(deadline: when) {
                  self.wifi()
             }
-    
             
         }, completion: nil)
         
