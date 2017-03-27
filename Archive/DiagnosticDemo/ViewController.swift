@@ -319,11 +319,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //proximity test
     func loadThirdView(){
         self.resultLabel.text = "Press Volume Up and Volume Down Buttons of your phone."
-        //let gifManager = SwiftyGifManager(memoryLimit:0)
-        //let gifImage = UIImage(gifName: "volume")
-        //TestImage.remo
-        //self.TestImage.setGifImage(gifImage, manager: gifManager, loopCount: 0)
-       // self.TestImage.set UIImage(named: "volume")
+      
         self.gifImg.isHidden = true
         self.TestImage.isHidden = false
         self.TestImage.image = nil
@@ -346,25 +342,21 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //wifi test
     func loadFourthView(){
         
-       // Reachability.monitorReachabilityChanges()
+       
         self.resultLabel.text = "Wifi Test is in Progress.."
         self.TestImage.image = UIImage(named: "wifi")
-        self.proximityBtn.backgroundColor = UIColor.green
+        self.volumeBtn.backgroundColor = UIColor.green
         self.wifiBtn.backgroundColor = UIColor.blue
-        //self.buttonVc.frame = CGRect(x: -145, y: 0, width: 603, height: 128);
+        
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
-            //Set x position what ever you want
-            //self.buttonVc.frame = CGRect(x: -280, y: 0, width: 603, height: 128);
             
             self.loadEmptyCircle()
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when) {
                  self.wifi()
             }
-
-           
-            
+    
             
         }, completion: nil)
         
@@ -514,7 +506,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 volumelvl1 = volumelvl
                 print("down");
                 self.volumeflagdwn = "1"
-                resultLabel.text = "Volume Test Done"
+               // resultLabel.text = "Volume Button Test Completed."
                 
                 
             }
@@ -527,11 +519,27 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 do{
                     
                     try audioSession.setActive(false)
+//                    self.loadFillCircle()
+//                    let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+//                    DispatchQueue.main.asyncAfter(deadline: when) {
+//                        volumeTest  = "1"
+//                        // Your code with delay
+//                        self.annimateView()
+//                        self.loadFourthView()
+//                        
+//                    }
                     self.loadFillCircle()
-                    let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+                    
+                    let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
                     DispatchQueue.main.asyncAfter(deadline: when) {
-                        volumeTest  = "1"
-                        // Your code with delay
+                        
+                        self.resultLabel.text = "Volume Button Test Completed."
+                        
+                        
+                    }
+                    let when1 = DispatchTime.now() + 5  // change 2 to desired number of seconds
+                    DispatchQueue.main.asyncAfter(deadline: when1) {
+                        
                         self.annimateView()
                         self.loadFourthView()
                         
