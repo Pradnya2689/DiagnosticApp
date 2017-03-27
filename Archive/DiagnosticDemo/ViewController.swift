@@ -519,10 +519,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 do{
                     
                     try audioSession.setActive(false)
+                     volumeTest  = "1"
 //                    self.loadFillCircle()
 //                    let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
 //                    DispatchQueue.main.asyncAfter(deadline: when) {
-//                        volumeTest  = "1"
+//
 //                        // Your code with delay
 //                        self.annimateView()
 //                        self.loadFourthView()
