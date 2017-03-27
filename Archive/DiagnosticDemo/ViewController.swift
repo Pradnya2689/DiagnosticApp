@@ -119,11 +119,11 @@ open class Toast{
         label.layer.shadowOffset = CGSize(width: 4, height: 3)
         label.layer.shadowOpacity = 0.3
         if(position == "bottom"){
-            label.frame = CGRect(x: (screenWidth-200)/2,y: screenHeight-50, width: 200, height: sizeoftxt.height+10)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: screenHeight-50, width: 200, height: sizeoftxt.height+20)
         }else if(position == "center"){
-            label.frame = CGRect(x: (screenWidth-200)/2,y: (screenHeight-sizeoftxt.height)/2, width: 200, height: sizeoftxt.height+10)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: (screenHeight-sizeoftxt.height)/2, width: 200, height: sizeoftxt.height+20)
         }else{
-            label.frame = CGRect(x: (screenWidth-200)/2,y: 120, width: 200, height: sizeoftxt.height+10)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: 120, width: 200, height: sizeoftxt.height+20)
         }
         //label.frame = CGRectMake((screenWidth-200)/2,(screenHeight-sizeoftxt.height)/2, 200, sizeoftxt.height)
         label.layer.masksToBounds = true
@@ -245,40 +245,50 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     @IBOutlet var resultLabel:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = ""
-        self.EndTaskBtn.isHidden = true
-        // Do any additional setup after loading the view, typically from a nib.
-//        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
-//        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
         
-        self.title = "Quality Check"
-        loadEmptyCircle()
-        self.resultLabel.text = "GPS Test is in progress..Ensure that device's GPS feature is ON."
-        
-        
-//        NotificationCenter.default.addObserver(
-//            self,
-//            selector: #selector(ViewController.reachabilityStatusChanged(_:)),
-//            name: NSNotification.Name.reachabilityChanged,
-//            object: nil)
-       
-
-        let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            // Your code with delay
-           
-            self.gpsBtnAction()
-        }
-        
-        
-        self.TestImage.image = UIImage(named: "gps")
         
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-       
+        self.title = ""
+        self.EndTaskBtn.isHidden = true
+        // Do any additional setup after loading the view, typically from a nib.
+        //        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
+        //        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
+        
+        self.title = "Quality Check"
+        loadEmptyCircle()
+        self.resultLabel.text = "GPS Test is in progress..Ensure that device's GPS feature is ON."
+        
+        
+        //        NotificationCenter.default.addObserver(
+        //            self,
+        //            selector: #selector(ViewController.reachabilityStatusChanged(_:)),
+        //            name: NSNotification.Name.reachabilityChanged,
+        //            object: nil)
+        
+        gpstestResult = "0"
+        proximityTestresult = "0"
+        volumeTest = "0"
+        wifiTestresult = "0"
+        self.volumeflagup = "0"
+        self.volumeflagdwn = "0"
+        self.gpsBtn.backgroundColor = UIColor.blue
+        self.proximityBtn.backgroundColor = UIColor.lightGray
+        self.volumeBtn.backgroundColor = UIColor.lightGray
+        self.wifiBtn.backgroundColor = UIColor.lightGray
+        
+        let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            
+            self.gpsBtnAction()
+        }
+        
+    
+        self.TestImage.image = UIImage(named: "gps")
     }
     
     func reachabilityStatusChanged(_ sender: NSNotification)
@@ -343,7 +353,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func loadFourthView(){
         
        
-        self.resultLabel.text = "Wifi Test is in Progress.."
+        self.resultLabel.text = "Wifi Test is in Progress..Ensure that your device's wifi is enabled."
         self.TestImage.image = UIImage(named: "wifi")
         self.volumeBtn.backgroundColor = UIColor.green
         self.wifiBtn.backgroundColor = UIColor.blue
@@ -410,7 +420,6 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             //Set x position what ever you want
             self.innerVc.frame = CGRect(x: 0, y: 150 , width: screenWidth, height: screenHeight)
             
-            
         }, completion: nil)
     }
     //unused code
@@ -446,23 +455,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //# MARK: - Volume Detect
     func volumedetect() -> Void{
         
-        
-        self.volumeflagup = "0"
-        self.volumeflagdwn = "0"
-//        NotificationCenter.default.addObserver(self, selector: "volumeChanged:", name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
-//        // Option #2
-//        
-//        do{
-//            var audioSession =  AVAudioSession()
-//            try audioSession.setActive(true)
-//            audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
-//        }catch{
-//            print("could not start reachability notifier")
-//        }
-//        
-//        //        audioSession.setActive(true, error: nil)
-        
-        
+       
         (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
         
         volumelvl1 = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
@@ -482,7 +475,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         print("got in here")
     }
     
-    //    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
+
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "outputVolume"{
             print("got in here")
@@ -498,7 +491,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 volumelvl1 = volumelvl
             }
                 
-            else if (volumelvl < volumelvl1)
+             if (volumelvl < volumelvl1)
             {
                
                 // self.Vdown.backgroundColor = UIColor.greenColor()
@@ -605,12 +598,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func wifi() -> Void
     {
         
-        NotificationCenter.default.addObserver(self, selector:  #selector(ViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
-        do{
-            try reachability.startNotifier()
-        }catch{
-            print("could not start reachability notifier")
-        }
+       
        
         if (Reachability2.isConnectedToNetwork())
         {
@@ -628,15 +616,21 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             }
         
             print("my network name is: \(wifiName!)")
-            wifiTestresult = "1"
-             resultLabel.text = "Wi-Fi Test Completed"
-              self.loadFillCircle()
+            //wifiTestresult = "1"
             
+              self.loadFillCircle()
+            let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                wifiTestresult = "1"
+               self.resultLabel.text = "Wi-Fi Test Completed."
+                
+                
+            }
             
             Toast.sharedInstance.textOnlyToast("Wifi connected to \(wifiName!)", position: "bottom")
             
-            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
+            let when1 = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when1) {
                 // Your code with delay
                 let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
                 self.navigationController?.pushViewController(reportVC, animated: true)
@@ -651,30 +645,19 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             wifiTestresult = "0"
             print("Internet Connection not Available!")
 
-            
+            NotificationCenter.default.addObserver(self, selector:  #selector(ViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
+            do{
+                try reachability.startNotifier()
+            }catch{
+                print("could not start reachability notifier")
+            }
             
         }
     }
     func reachabilityChanged(_ sender: NSNotification) {
         
         let reachability = sender.object as! Reachability
-        
-       /* let wifiName = Reachability2.getSSID()
-        // let wifiName = Reachability.fetchSSIDInfo()
-        let wifiName1 = Reachability2.fetchSSIDInfo()
-        
-        print(wifiName!)
-        print(wifiName1)
-        
-        if reachability.isReachable {
-            if reachability.isReachableViaWiFi {
-                print("Reachable via WiFi")
-            } else {
-                print("Reachable via Cellular")
-            }
-        } else {
-            print("Network not reachable")
-        }*/
+    
         
         
         if (Reachability2.isConnectedToNetwork())
@@ -703,15 +686,23 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             
             
             print("my network name is: \(wifiName!)")
-            wifiTestresult = "1"
-            resultLabel.text = "Wi-Fi Test Done"
+            
+            //resultLabel.text = "Wi-Fi Test Completed."
             self.loadFillCircle()
             
             
+            let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                wifiTestresult = "1"
+                self.resultLabel.text = "Wi-Fi Test Completed."
+                
+                
+            }
+            
             Toast.sharedInstance.textOnlyToast("Wifi connected to \(wifiName!)", position: "bottom")
             
-            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
+            let when1 = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when1) {
                 // Your code with delay
                 let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
                 self.navigationController?.pushViewController(reportVC, animated: true)
@@ -721,22 +712,16 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }
         else
         {
+             wifiTestresult = "0"
             resultLabel.text = "Please check with your wifi settings"
             self.EndTaskBtn.isHidden = false
             
             print("Internet Connection not Available!")
-//            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
-//            DispatchQueue.main.asyncAfter(deadline: when) {
-//                // Your code with delay
-//                let reportVC = self.storyboard?.instantiateViewController(withIdentifier: "reportVC") as! ReportViewController
-//                self.navigationController?.pushViewController(reportVC, animated: true)
+
             
             }
             print("Internet Connection not Available!")
-            //            gpResult.text = "Internet Connection not Available!"
-            //            result.text = "Please Enable your wifi"
-            
-       // }
+        
 
     }
 
