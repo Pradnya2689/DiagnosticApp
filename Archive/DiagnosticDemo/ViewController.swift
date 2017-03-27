@@ -251,6 +251,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
 //        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
 //        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
         
+        self.title = "Quality Check"
         loadEmptyCircle()
         self.resultLabel.text = "GPS Test is in progress..Ensure that device's GPS feature is ON."
         
