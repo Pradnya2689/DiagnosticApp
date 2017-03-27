@@ -25,11 +25,11 @@
 		4C8A5ADD1E8537890017CBF2 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */; };
 		4C8A5ADE1E8537890017CBF2 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */; };
 		4C8A5ADF1E8537890017CBF2 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */; };
+		4C8A5AE11E88EE8D0017CBF2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5AE01E88EE8D0017CBF2 /* Reachability.swift */; };
 		D9D04A971E83AB5900AA5EDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */; };
 		D9D04A9A1E83AB6500AA5EDB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */; };
 		D9D04A9D1E83AB7100AA5EDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */; };
 		D9D04A9E1E83AB7100AA5EDB /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9C1E83AB7100AA5EDB /* AVKit.framework */; };
-		D9D04AA01E83D1BD00AA5EDB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D04A9F1E83D1BD00AA5EDB /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,12 +75,12 @@
 		4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
 		4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
+		4C8A5AE01E88EE8D0017CBF2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D9D04A961E83AB5900AA5EDB /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D9D04A9C1E83AB7100AA5EDB /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		D9D04A9F1E83D1BD00AA5EDB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +117,7 @@
 			children = (
 				4C8A5AD51E8537890017CBF2 /* motion_gesture_aircall6.gif */,
 				4C8A5AD61E8537890017CBF2 /* Info.plist */,
+				4C8A5AE01E88EE8D0017CBF2 /* Reachability.swift */,
 				4C8A5AD71E8537890017CBF2 /* SwiftyGif.h */,
 				4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */,
 				4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */,
@@ -142,9 +143,6 @@
 		4C60A6DE1E82AEE500D57B40 /* DiagnosticDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D962D79C1E854B6100FB0E23 /* Reachability.swift */,
-				D9D04AA21E85228400AA5EDB /* Reachability.h */,
-				D9D04AA31E85228400AA5EDB /* Reachability.m */,
 				4C60A6DF1E82AEE500D57B40 /* AppDelegate.swift */,
 				4C60A6E11E82AEE600D57B40 /* ViewController.swift */,
 				4C3EABB21E83D35C00CC2911 /* ReportTableViewCell.swift */,
@@ -157,7 +155,6 @@
 				4C60A6EB1E82AEE600D57B40 /* LaunchScreen.storyboard */,
 				4C60A6EE1E82AEE600D57B40 /* Info.plist */,
 				4C60A6E61E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld */,
-				D9D04AA11E85228300AA5EDB /* DiagnosticDemo-Bridging-Header.h */,
 			);
 			path = DiagnosticDemo;
 			sourceTree = "<group>";
@@ -418,15 +415,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D962D79D1E854B6100FB0E23 /* Reachability.swift in Sources */,
 				4C60A6E81E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld in Sources */,
 				4C60A6E21E82AEE600D57B40 /* ViewController.swift in Sources */,
 				4C8A5ADE1E8537890017CBF2 /* UIImage+SwiftyGif.swift in Sources */,
-				D9D04AA01E83D1BD00AA5EDB /* Reachability.swift in Sources */,
 				4C60A6E01E82AEE500D57B40 /* AppDelegate.swift in Sources */,
 				4C3EABB71E83D3B200CC2911 /* ReportViewController.swift in Sources */,
 				4C8A5ADD1E8537890017CBF2 /* SwiftyGifManager.swift in Sources */,
 				4C8A5ADF1E8537890017CBF2 /* UIImageView+SwiftyGif.swift in Sources */,
+				4C8A5AE11E88EE8D0017CBF2 /* Reachability.swift in Sources */,
 				4C3EABB31E83D35C00CC2911 /* ReportTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

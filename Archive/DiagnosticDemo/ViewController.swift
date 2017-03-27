@@ -247,14 +247,13 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.resultLabel.text = "GPS Test is in progress..Ensure that device's GPS feature is ON."
         
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(ViewController.reachabilityStatusChanged(_:)),
-            name: NSNotification.Name.reachabilityChanged,
-            object: nil)
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(ViewController.reachabilityStatusChanged(_:)),
+//            name: NSNotification.Name.reachabilityChanged,
+//            object: nil)
        
-//        self.wifi()
-        self.gpsBtnAction()
+
         let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
@@ -275,16 +274,19 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
         //volume button test
     func loadSEcondVC(){
+        
         let gifManager = SwiftyGifManager(memoryLimit:50)
         // let gif = UIImage(gifName: "motion_gesture_aircall6.gif")
         let gifImage = UIImage(gifName: "motion_gesture_aircall6.gif")
         self.gifImg.setGifImage(gifImage, manager: gifManager, loopCount: 20)
+        self.gifImg.isHidden = false
+        self.TestImage.isHidden = true
         self.resultLabel.text = "Hover your hand on device."
-        self.TestImage.image = UIImage(named: "proximity")
+       // self.TestImage.setGifImage(gifImage, manager: gifManager, loopCount: 20)
         self.gpsBtn.backgroundColor = UIColor.green
-        self.volumeBtn.backgroundColor = UIColor.blue
-        //self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
+        self.proximityBtn.backgroundColor = UIColor.blue
         
+       
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             
             self.loadEmptyCircle()
@@ -303,20 +305,26 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //proximity test
     func loadThirdView(){
         self.resultLabel.text = "Press Volume Up and Volume Down Buttons of your phone."
+        //let gifManager = SwiftyGifManager(memoryLimit:0)
+        //let gifImage = UIImage(gifName: "volume")
+        //TestImage.remo
+        //self.TestImage.setGifImage(gifImage, manager: gifManager, loopCount: 0)
+       // self.TestImage.set UIImage(named: "volume")
+        self.gifImg.isHidden = true
+        self.TestImage.isHidden = false
+        self.TestImage.image = nil
+        self.TestImage.gifImage = nil
         self.TestImage.image = UIImage(named: "volume")
-        self.volumeBtn.backgroundColor = UIColor.green
-        self.proximityBtn.backgroundColor = UIColor.blue
-        //self.buttonVc.frame = CGRect(x: 0, y: 0, width: 603, height: 128);
-        
+        self.volumeBtn.backgroundColor = UIColor.blue
+        self.proximityBtn.backgroundColor = UIColor.green
+        //self.TestImage.image = UIImage.init(named: "volume")
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
-         
             
             self.loadEmptyCircle()
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when) {
                self.volumedetect()
             }
-            
             
            
         }, completion: nil)
@@ -535,25 +543,37 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         if device.isProximityMonitoringEnabled {
             NotificationCenter.default.addObserver(self, selector: #selector(proximityChanged(notification:)), name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
         }
-        
+        if device.isProximityMonitoringEnabled == false{
+            proximityTestresult = "0"
+        }
     }
     
     func proximityChanged(notification: NSNotification) {
-//        NotificationCenter.default.removeObserver(self, name:  NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
-        
+
         device.isProximityMonitoringEnabled = false
         if let device = notification.object as? UIDevice {
             print("\(device) detected!")
             proximityTestresult = "1"
-            resultLabel.text = "Proximity Sensors Test Successful. "
+            self.resultLabel.text = "Proximity Sensors Test In Progress."
             self.loadFillCircle()
-            let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
+            
+            
+            let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
+                
+                self.resultLabel.text = "Proximity Sensors Test Completed."
+                
+                
+            }
+            let when1 = DispatchTime.now() + 5  // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when1) {
                 // Your code with delay
+                //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
                 self.annimateView()
                 self.loadThirdView()
                 
             }
+            
         }
     }
     
@@ -694,37 +714,37 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
     func  locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
         manager.delegate = nil
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         //gpResult.text = "locations = \(locValue.latitude) \(locValue.longitude)"
         
         if(locValue.latitude != 0 && locValue.longitude != 0){
-            
-           // locationManager.stopUpdatingLocation()
-            // result.text = "GPS Test Successful"
+        
              gpstestResult = "1"
-           // self.annimateView()
+           
             print("GPS Test Successful")
             self.loadFillCircle()
             
-            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+            let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
-                // Your code with delay
+                
                 self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
-              //  self.loadSEcondVC()
+                
                 
             }
-            let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
+            let when1 = DispatchTime.now() + 6  // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
                 // Your code with delay
                //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+                self.annimateView()
                 self.loadSEcondVC()
                 
             }
         }else{
             gpstestResult = "0"
-           // self.annimateView()
+          
             
             loadFillCircle()
             let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
