@@ -26,7 +26,6 @@
 		D9D04A9A1E83AB6500AA5EDB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */; };
 		D9D04A9D1E83AB7100AA5EDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */; };
 		D9D04A9E1E83AB7100AA5EDB /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A9C1E83AB7100AA5EDB /* AVKit.framework */; };
-		D9D04AA41E85228400AA5EDB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D04AA31E85228400AA5EDB /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,9 +72,6 @@
 		D9D04A991E83AB6500AA5EDB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D9D04A9B1E83AB7100AA5EDB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D9D04A9C1E83AB7100AA5EDB /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		D9D04AA11E85228300AA5EDB /* DiagnosticDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiagnosticDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		D9D04AA21E85228400AA5EDB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		D9D04AA31E85228400AA5EDB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +106,13 @@
 		4C60A6D31E82AEE500D57B40 = {
 			isa = PBXGroup;
 			children = (
+				4C8A5AD51E8537890017CBF2 /* motion_gesture_aircall6.gif */,
+				4C8A5AD61E8537890017CBF2 /* Info.plist */,
+				4C8A5AE01E88EE8D0017CBF2 /* Reachability.swift */,
+				4C8A5AD71E8537890017CBF2 /* SwiftyGif.h */,
+				4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */,
+				4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */,
+				4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */,
 				4C60A6DE1E82AEE500D57B40 /* DiagnosticDemo */,
 				4C60A6F61E82AEE600D57B40 /* DiagnosticDemoTests */,
 				4C60A7011E82AEE600D57B40 /* DiagnosticDemoUITests */,
@@ -147,7 +150,6 @@
 				4C60A6EB1E82AEE600D57B40 /* LaunchScreen.storyboard */,
 				4C60A6EE1E82AEE600D57B40 /* Info.plist */,
 				4C60A6E61E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld */,
-				D9D04AA11E85228300AA5EDB /* DiagnosticDemo-Bridging-Header.h */,
 			);
 			path = DiagnosticDemo;
 			sourceTree = "<group>";
@@ -298,12 +300,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8A5ADC1E8537890017CBF2 /* Info.plist in Resources */,
 				4C8A5ABA1E84EEDC0017CBF2 /* MyriadPro-Regular.otf in Resources */,
 				4C60A6ED1E82AEE600D57B40 /* LaunchScreen.storyboard in Resources */,
 				4C60A6EA1E82AEE600D57B40 /* Assets.xcassets in Resources */,
 				4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */,
 				4C60A6E51E82AEE600D57B40 /* Main.storyboard in Resources */,
 				4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */,
+				4C8A5ADB1E8537890017CBF2 /* motion_gesture_aircall6.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +412,7 @@
 			files = (
 				4C60A6E81E82AEE600D57B40 /* DiagnosticDemo.xcdatamodeld in Sources */,
 				4C60A6E21E82AEE600D57B40 /* ViewController.swift in Sources */,
-				D9D04AA41E85228400AA5EDB /* Reachability.m in Sources */,
+				4C8A5ADE1E8537890017CBF2 /* UIImage+SwiftyGif.swift in Sources */,
 				4C60A6E01E82AEE500D57B40 /* AppDelegate.swift in Sources */,
 				4C3EABB71E83D3B200CC2911 /* ReportViewController.swift in Sources */,
 				D962D7E01E88F26800FB0E23 /* Reachability2.swift in Sources */,
