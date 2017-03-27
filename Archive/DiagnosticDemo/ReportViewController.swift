@@ -11,7 +11,7 @@ import UIKit
 class ReportViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
 
     @IBOutlet weak var reportTbl: UITableView!
-    
+    @IBOutlet var statusLbl:UILabel!
     var iconArr = ["gps","volume","proximity","wifi"]
     var lblArr = ["GPS Working", "Volume Button Working", "Proximity Working", "WiFi Working"]
     var reportArr = ["accept","accept","reject","accept"]
@@ -28,12 +28,20 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
         btn.backgroundColor = UIColor.red
         btn.setTitle("Test Again", for: .normal)
+        btn.addTarget(self, action: #selector(testAgain), for: .touchUpInside)
         btnView.addSubview(btn)
         
         self.view.addSubview(btnView)
         self.view.bringSubview(toFront: btnView)
+        if(gpstestResult == "1" && proximityTestresult == "1" && volumeTest == "1" && wifiTestresult == "1"){
+            self.statusLbl.text = "All test are Pass."
+        }else{
+            self.statusLbl.text = "Diagnose completed. Some of the test failed."
+        }
     }
-    
+    @IBAction func testAgain(){
+        self.navigationController!.popToRootViewController(animated: false)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,7 +77,7 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
         {
             cell.reportImg.image = UIImage(named: "accept")
         }
-        else if ((reportArr1[indexPath.row]) == "0")
+         if ((reportArr1[indexPath.row]) == "0")
         {
             cell.reportImg.image = UIImage(named: "reject")
         }
