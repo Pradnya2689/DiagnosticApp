@@ -234,6 +234,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     var volumeflagup : String!
     var volumeflagdwn : String!
     @IBOutlet var gifImg:UIImageView!
+    
+    let device = UIDevice.current
+    
+     var audioSession =  AVAudioSession()
+    
     @IBOutlet var resultLabel:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -242,6 +247,14 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.resultLabel.text = "GPS Test is in progress..Ensure that device's GPS feature is ON."
         
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(ViewController.reachabilityStatusChanged(_:)),
+            name: NSNotification.Name.reachabilityChanged,
+            object: nil)
+       
+//        self.wifi()
+        self.gpsBtnAction()
         let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
