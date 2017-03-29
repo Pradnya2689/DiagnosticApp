@@ -803,16 +803,17 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                         gpstestResult = "0"
                         self.loadFillCircle()
         
-                        let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+                        let when = DispatchTime.now() + 3
+        // change 2 to desired number of seconds
                         DispatchQueue.main.asyncAfter(deadline: when) {
         
                             self.resultLabel.text = "Failed to get location"
         
                         }
-                        let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
+                        let when1 = DispatchTime.now() + 4
+        // change 2 to desired number of seconds
                         DispatchQueue.main.asyncAfter(deadline: when1) {
-                            // Your code with delay
-                            //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+                           
                             self.annimateView()
                             self.loadSEcondVC()
                             
@@ -842,8 +843,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             }
             let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
-                // Your code with delay
-               //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+                
                 self.annimateView()
                 self.loadSEcondVC()
                 

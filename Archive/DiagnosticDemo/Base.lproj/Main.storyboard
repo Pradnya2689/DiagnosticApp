@@ -62,8 +62,8 @@
                                                 </constraints>
                                                 <state key="normal" image="proximity"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBR-Do-1hA">
-                                                <rect key="frame" x="15" y="39" width="50" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBR-Do-1hA">
+                                                <rect key="frame" x="15" y="39" width="45" height="46"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="Jfn-WO-hFc"/>
@@ -203,7 +203,7 @@
         <scene sceneID="7bj-ap-u14">
             <objects>
                 <navigationController id="crH-4b-9sO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OPg-b7-MeH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPg-b7-MeH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
