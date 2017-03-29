@@ -399,7 +399,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
     
     // load animation circle
-    func loadFillCircle(){
+    func loadFillCircle()
+    {
          let circle = self.circleVc!
         var progressCircle = CAShapeLayer()
         
@@ -417,6 +418,56 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = 2
+        animation.fillMode = kCAFillModeForwards
+        animation.isRemovedOnCompletion = false
+        
+        progressCircle.add(animation, forKey: "ani")
+    }
+    func HalfFillCircle()
+    {
+        let circle = self.circleVc!
+        var progressCircle = CAShapeLayer()
+        
+        let circlePath = UIBezierPath(ovalIn: circle.bounds)
+        
+        progressCircle = CAShapeLayer ()
+        progressCircle.path = circlePath.cgPath
+        progressCircle.strokeColor = UIColor.init(red: 0, green: 128/255.0, blue: 255/255, alpha: 1).cgColor
+        progressCircle.fillColor = UIColor.clear.cgColor
+        progressCircle.lineWidth = 8.0
+        
+        circle.layer.addSublayer(progressCircle)
+        
+        
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0
+        animation.toValue = 0.5
+        animation.duration = 2
+        animation.fillMode = kCAFillModeForwards
+        animation.isRemovedOnCompletion = false
+        
+        progressCircle.add(animation, forKey: "ani")
+    }
+    func AnotherHalfFillCircle()
+    {
+        let circle = self.circleVc!
+        var progressCircle = CAShapeLayer()
+        
+        let circlePath = UIBezierPath(ovalIn: circle.bounds)
+        
+        progressCircle = CAShapeLayer ()
+        progressCircle.path = circlePath.cgPath
+        progressCircle.strokeColor = UIColor.init(red: 0, green: 128/255.0, blue: 255/255, alpha: 1).cgColor
+        progressCircle.fillColor = UIColor.clear.cgColor
+        progressCircle.lineWidth = 8.0
+        
+        circle.layer.addSublayer(progressCircle)
+        
+        
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0.5
         animation.toValue = 1
         animation.duration = 2
         animation.fillMode = kCAFillModeForwards
@@ -508,27 +559,33 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         if keyPath == "outputVolume"{
             print("got in here")
             // float volumeLevel = [[MPMusicPlayerController applicationMusicPlayer] volume]
-            let volumelvl = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
+            var volumelvl = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
+            print(volumelvl)
+            print(volumelvl1)
             
-            
-            if (volumelvl > volumelvl1)
+
+
+            if ((volumelvl > volumelvl1) && (self.volumeflagup == "0") && (self.volumeflagdwn == "0"))
             {
                 print("up");
                 self.volumeflagup = "1"
-                //self.Vup.backgroundColor = UIColor.greenColor()
+                 self.HalfFillCircle()
                 volumelvl1 = volumelvl
             }
                 
-             if (volumelvl < volumelvl1)
+           else  if ((volumelvl < volumelvl1)  && (self.volumeflagup == "1") && (self.volumeflagdwn == "0"))
             {
                
-                // self.Vdown.backgroundColor = UIColor.greenColor()
+              
                 volumelvl1 = volumelvl
-                print("down");
+                    print("down");
                 self.volumeflagdwn = "1"
-               // resultLabel.text = "Volume Button Test Completed."
-                
-                
+                 self.AnotherHalfFillCircle()
+                   }
+            
+            else
+            {
+            volumelvl1 = volumelvl
             }
             
             
@@ -536,7 +593,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             if (self.volumeflagup == "1" && self.volumeflagdwn == "1")
             {
             
-                do{
+                do
+                {
                     
                     try audioSession.setActive(false)
                      volumeTest  = "1"
@@ -572,7 +630,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 }
             }
             
-            
+      //      }
             
             
         }
@@ -689,7 +747,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         if (Reachability2.isConnectedToNetwork())
         {
             print("Internet Connection Available!")
-          
+           
              self.EndTaskBtn.isHidden = true
             let wifiName = Reachability2.getSSID()
             
