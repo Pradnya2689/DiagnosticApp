@@ -444,9 +444,9 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         progressCircle = CAShapeLayer ()
         progressCircle.path = circlePath.cgPath
-        progressCircle.strokeColor = UIColor.green.cgColor
+        progressCircle.strokeColor = UIColor.init(red: 0, green: 128/255.0, blue: 255/255, alpha: 1).cgColor
         progressCircle.fillColor = UIColor.clear.cgColor
-        progressCircle.lineWidth = 10.0
+        progressCircle.lineWidth = 8.0
         
         circle.layer.addSublayer(progressCircle)
         
@@ -469,9 +469,9 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         progressCircle = CAShapeLayer ()
         progressCircle.path = circlePath.cgPath
-        progressCircle.strokeColor = UIColor.green.cgColor
+        progressCircle.strokeColor = UIColor.init(red: 0, green: 128/255.0, blue: 255/255, alpha: 1).cgColor
         progressCircle.fillColor = UIColor.clear.cgColor
-        progressCircle.lineWidth = 10.0
+        progressCircle.lineWidth = 8.0
         
         circle.layer.addSublayer(progressCircle)
         
@@ -569,51 +569,33 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         if keyPath == "outputVolume"{
             print("got in here")
             // float volumeLevel = [[MPMusicPlayerController applicationMusicPlayer] volume]
-            let volumelvl = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
+            var volumelvl = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
             print(volumelvl)
             print(volumelvl1)
             
+
+
             if ((volumelvl > volumelvl1) && (self.volumeflagup == "0") && (self.volumeflagdwn == "0"))
             {
                 print("up");
                 self.volumeflagup = "1"
                  self.HalfFillCircle()
-//                if (self.volumeflagdwn == "1")
-//                {
-//               self.AnotherHalfFillCircle()
-//                }
-//                else if (self.volumeflagdwn == "0")
-//                {
-//                
-//                     self.HalfFillCircle()
-//                }
-                
-                //self.Vup.backgroundColor = UIColor.greenColor()
                 volumelvl1 = volumelvl
             }
                 
-             if ((volumelvl < volumelvl1)  && (self.volumeflagup == "1") && (self.volumeflagdwn == "0"))
+           else  if ((volumelvl < volumelvl1)  && (self.volumeflagup == "1") && (self.volumeflagdwn == "0"))
             {
                
-                // self.Vdown.backgroundColor = UIColor.greenColor()
+              
                 volumelvl1 = volumelvl
-                 //self.AnotherHalfFillCircle()
-                
-//                if (self.volumeflagup == "1")
-//                {
-//                     self.AnotherHalfFillCircle()
-//                }
-//                else if (self.volumeflagup == "0")
-//                {
-//                    self.HalfFillCircle()
-//                   
-//                }
-                print("down");
+                    print("down");
                 self.volumeflagdwn = "1"
                  self.AnotherHalfFillCircle()
-               // resultLabel.text = "Volume Button Test Completed."
-                
-                
+                   }
+            
+            else
+            {
+            volumelvl1 = volumelvl
             }
             
             
@@ -621,7 +603,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             if (self.volumeflagup == "1" && self.volumeflagdwn == "1")
             {
             
-                do{
+                do
+                {
                     
                     try audioSession.setActive(false)
                      volumeTest  = "1"
@@ -657,7 +640,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 }
             }
             
-            
+      //      }
             
             
         }
@@ -777,6 +760,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
            
              self.EndTaskBtn.isHidden = true
             let wifiName = Reachability2.getSSID()
+            
             let wifiName1 = Reachability2.fetchSSIDInfo()
             
             guard wifiName != nil else {
