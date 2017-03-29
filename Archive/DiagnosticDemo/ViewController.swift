@@ -339,6 +339,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
     //proximity test
     func loadThirdView(){
+        
+         (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
         self.resultLabel.text = "Press Volume Up and Volume Down Buttons of your phone."
       
         self.gifImg.isHidden = true
@@ -358,6 +360,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             self.loadEmptyCircle()
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when) {
+                
                self.volumedetect()
             }
             
@@ -474,8 +477,24 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //# MARK: - Volume Detect
     func volumedetect() -> Void{
         
+        
+        self.volumeflagup = "0"
+        self.volumeflagdwn = "0"
+//        NotificationCenter.default.addObserver(self, selector: "volumeChanged:", name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
+//        // Option #2
+//        
+//        do{
+//            var audioSession =  AVAudioSession()
+//            try audioSession.setActive(true)
+//            audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
+//        }catch{
+//            print("could not start reachability notifier")
+//        }
+//        
+//        //        audioSession.setActive(true, error: nil)
+        
+        
        
-        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
         
         volumelvl1 = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
         do{
