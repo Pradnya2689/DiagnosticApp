@@ -287,7 +287,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }
         
     
-        self.TestImage.image = UIImage(named: "gps")
+        self.TestImage.image = UIImage(named: "wocGps")
     }
     
     func reachabilityStatusChanged(_ sender: NSNotification)
@@ -336,7 +336,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.TestImage.isHidden = false
         self.TestImage.image = nil
         self.TestImage.gifImage = nil
-        self.TestImage.image = UIImage(named: "volume")
+        self.TestImage.image = UIImage(named: "wocvol")
 //        self.volumeBtn.backgroundColor = UIColor.blue
 //        self.proximityBtn.backgroundColor = UIColor.green
         //self.TestImage.image = UIImage.init(named: "volume")
@@ -362,7 +362,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
        
         self.resultLabel.text = "Wifi Test is in Progress..Ensure that your device's wifi is enabled."
-        self.TestImage.image = UIImage(named: "wifi")
+        self.TestImage.image = UIImage(named: "wocwifi")
 //        self.volumeBtn.backgroundColor = UIColor.green
 //        self.wifiBtn.backgroundColor = UIColor.blue
         self.gpsBtn.setBackgroundImage(UIImage.init(named: "gpsSel"), for: .normal)
@@ -391,7 +391,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         progressCircle1 = CAShapeLayer ()
         progressCircle1.path = circlePath1.cgPath
-        progressCircle1.strokeColor = UIColor.lightGray.cgColor
+        progressCircle1.strokeColor = UIColor.init(red: 188/255.0, green: 188/255.0, blue: 188/255.0, alpha: 1).cgColor
         progressCircle1.fillColor = UIColor.clear.cgColor
         progressCircle1.lineWidth = 8.0
         
@@ -564,6 +564,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 print("up");
                 self.volumeflagup = "1"
                  self.HalfFillCircle()
+                 self.volumeBtn.setBackgroundImage(UIImage.init(named: "volume"), for: .normal)
+                 self.TestImage.image = UIImage(named: "volumeup")
                 self.resultLabel.text = "Press Volume Down Button."
                 volumelvl1 = volumelvl
             }
@@ -575,6 +577,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 volumelvl1 = volumelvl
                     print("down");
                 self.volumeflagdwn = "1"
+                self.TestImage.image = UIImage(named: "volumedown")
                  self.AnotherHalfFillCircle()
                    }
             

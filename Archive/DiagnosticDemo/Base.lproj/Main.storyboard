@@ -103,7 +103,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgn-Dh-ayg">
                                         <rect key="frame" x="88" y="70" width="200" height="200"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-SR-VzG">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wocGps" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-SR-VzG">
                                                 <rect key="frame" x="40" y="40" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="EKX-dH-pfg"/>
@@ -151,14 +151,12 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-hb-MAm">
                                         <rect key="frame" x="143" y="435" width="89" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196078431372548" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="2ju-Mz-Huq"/>
-                                            <constraint firstAttribute="width" constant="89" id="FAa-aZ-N2o"/>
+                                            <constraint firstAttribute="width" constant="89" id="OIQ-Bw-irp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="18"/>
                                         <state key="normal" title="END TEST">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.50196078430000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="EndTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SRj-m4-7fa"/>
@@ -168,14 +166,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="lvB-hb-mtr" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leading" constant="8" id="08R-No-8eU"/>
-                                    <constraint firstItem="8I5-hb-MAm" firstAttribute="top" secondItem="lvB-hb-mtr" secondAttribute="bottom" constant="30" id="6uH-Gj-abu"/>
+                                    <constraint firstItem="8I5-hb-MAm" firstAttribute="top" secondItem="lvB-hb-mtr" secondAttribute="bottom" constant="30" id="5Aa-3t-eMR"/>
                                     <constraint firstItem="vgn-Dh-ayg" firstAttribute="top" secondItem="eBq-aw-bJW" secondAttribute="top" constant="70" id="89u-JG-cLC"/>
+                                    <constraint firstItem="8I5-hb-MAm" firstAttribute="centerX" secondItem="lvB-hb-mtr" secondAttribute="centerX" id="9pz-TD-6yS"/>
                                     <constraint firstItem="vgn-Dh-ayg" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leading" constant="88" id="D9J-rL-XMi"/>
-                                    <constraint firstAttribute="bottom" secondItem="8I5-hb-MAm" secondAttribute="bottom" constant="53" id="JnH-UO-SeY"/>
                                     <constraint firstAttribute="trailing" secondItem="lvB-hb-mtr" secondAttribute="trailing" constant="8" id="Pnh-LA-0Wh"/>
+                                    <constraint firstAttribute="bottom" secondItem="8I5-hb-MAm" secondAttribute="bottom" constant="53" id="b7x-t0-BT5"/>
                                     <constraint firstAttribute="trailing" secondItem="vgn-Dh-ayg" secondAttribute="trailing" constant="87" id="gMM-Mh-gpz"/>
-                                    <constraint firstItem="8I5-hb-MAm" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leading" constant="143" id="o7a-NQ-CAo"/>
-                                    <constraint firstAttribute="trailing" secondItem="8I5-hb-MAm" secondAttribute="trailing" constant="143" id="zzA-SI-ZeV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -361,5 +358,6 @@
         <image name="proximity" width="64" height="64"/>
         <image name="volume" width="64" height="64"/>
         <image name="wifi" width="64" height="64"/>
+        <image name="wocGps" width="64" height="64"/>
     </resources>
 </document>

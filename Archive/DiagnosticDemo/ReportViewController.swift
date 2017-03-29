@@ -26,7 +26,7 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
         let btnView = UIView(frame: CGRect(x: 0, y: screenHeight-60, width: screenWidth, height: 60))
         //btnView.backgroundColor = UIColor.blue
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
-        btn.backgroundColor = UIColor.red
+        btn.backgroundColor = UIColor.init(red: 0, green: 128/255.0, blue: 255/255, alpha: 1)
         btn.setTitle("Test Again", for: .normal)
         btn.addTarget(self, action: #selector(testAgain), for: .touchUpInside)
         btnView.addSubview(btn)
