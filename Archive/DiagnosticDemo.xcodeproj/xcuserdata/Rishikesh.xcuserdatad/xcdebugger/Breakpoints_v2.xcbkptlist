@@ -26,108 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512314992.079613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "415"
-            endingLineNumber = "415"
-            landmarkName = "annimateView()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.annimateView () -&gt; ()"
-                  moduleName = "DiagnosticDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.277035"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "414"
-                  endingLineNumber = "414"
-                  offsetFromSymbolStart = "532">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.(annimateView () -&gt; ()).(closure #1)"
-                  moduleName = "DiagnosticDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.27828"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "414"
-                  endingLineNumber = "414"
-                  offsetFromSymbolStart = "240">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "458"
-            endingLineNumber = "458"
-            landmarkName = "volumedetect()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.volumedetect () -&gt; ()"
-                  moduleName = "DiagnosticDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.281881"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "466"
-                  endingLineNumber = "466"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.(volumedetect () -&gt; ()).(closure #1)"
-                  moduleName = "DiagnosticDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.28311"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "466"
-                  endingLineNumber = "466"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "453"
-            endingLineNumber = "453"
-            landmarkName = "volumedetect()"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "loadFillCircle()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512315610.998325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "419"
-            endingLineNumber = "419"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -154,11 +58,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512315610.998325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "618"
-            endingLineNumber = "618"
+            startingLineNumber = "504"
+            endingLineNumber = "504"
+            landmarkName = "fillCircle(finished:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiagnosticDemo/ViewController.swift"
+            timestampString = "512315610.998325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
+            landmarkName = "annimateView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiagnosticDemo/ViewController.swift"
+            timestampString = "512317854.016809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "693"
+            endingLineNumber = "693"
             landmarkName = "wifi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "625"
-            endingLineNumber = "625"
+            startingLineNumber = "700"
+            endingLineNumber = "700"
             landmarkName = "wifi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -191,7 +127,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "268"
             endingLineNumber = "268"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
+            startingLineNumber = "579"
+            endingLineNumber = "579"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "527"
-            endingLineNumber = "527"
+            startingLineNumber = "602"
+            endingLineNumber = "602"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -239,7 +175,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "296"
             endingLineNumber = "296"
-            landmarkName = "loadSEcondVC()"
+            landmarkName = "reachabilityStatusChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -250,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "712"
-            endingLineNumber = "712"
+            startingLineNumber = "781"
+            endingLineNumber = "781"
             landmarkName = "reachabilityChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "628"
-            endingLineNumber = "628"
+            startingLineNumber = "703"
+            endingLineNumber = "703"
             landmarkName = "wifi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "560"
-            endingLineNumber = "560"
+            startingLineNumber = "635"
+            endingLineNumber = "635"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,45 +250,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512315610.998325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "469"
-            endingLineNumber = "469"
+            startingLineNumber = "520"
+            endingLineNumber = "520"
             landmarkName = "volumedetect()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.volumedetect () -&gt; ()"
-                  moduleName = "DiagnosticDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.320354"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "466"
-                  endingLineNumber = "466"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.(volumedetect () -&gt; ()).(closure #1)"
-                  moduleName = "DiagnosticDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.321641"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "466"
-                  endingLineNumber = "466"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -362,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "509"
-            endingLineNumber = "509"
+            startingLineNumber = "572"
+            endingLineNumber = "572"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "510"
-            endingLineNumber = "510"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,45 +298,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "650"
-            endingLineNumber = "650"
+            startingLineNumber = "725"
+            endingLineNumber = "725"
             landmarkName = "wifi()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.(wifi () -&gt; ()).(closure #1)"
-                  moduleName = "DiagnosticDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.330632"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "648"
-                  endingLineNumber = "648"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.(wifi () -&gt; ()).(closure #1)"
-                  moduleName = "DiagnosticDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.331915"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "648"
-                  endingLineNumber = "648"
-                  offsetFromSymbolStart = "444">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -442,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512315610.998325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "498"
-            endingLineNumber = "498"
+            startingLineNumber = "549"
+            endingLineNumber = "549"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "533"
-            endingLineNumber = "533"
+            startingLineNumber = "608"
+            endingLineNumber = "608"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "669"
-            endingLineNumber = "669"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
             landmarkName = "wifi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -495,7 +367,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "321"
             endingLineNumber = "321"
-            landmarkName = "loadThirdView()"
+            landmarkName = "loadSEcondVC()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -522,11 +394,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512315610.998325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
+            startingLineNumber = "501"
+            endingLineNumber = "501"
+            landmarkName = "fillCircle(finished:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiagnosticDemo/ViewController.swift"
+            timestampString = "512315610.998325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "522"
+            endingLineNumber = "522"
             landmarkName = "volumedetect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512315610.998325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "471"
-            endingLineNumber = "471"
+            startingLineNumber = "535"
+            endingLineNumber = "535"
             landmarkName = "volumedetect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,12 +442,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512315610.998325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
-            landmarkName = "volumeChanged(notification:)"
+            startingLineNumber = "540"
+            endingLineNumber = "540"
+            landmarkName = "volumedetect()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -570,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "489"
-            endingLineNumber = "489"
+            startingLineNumber = "614"
+            endingLineNumber = "614"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,59 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
+            timestampString = "512317854.016809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "539"
-            endingLineNumber = "539"
-            landmarkName = "observeValue(forKeyPath:of:change:context:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "546"
-            endingLineNumber = "546"
-            landmarkName = "observeValue(forKeyPath:of:change:context:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "547"
-            endingLineNumber = "547"
-            landmarkName = "observeValue(forKeyPath:of:change:context:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512303213.955971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "548"
-            endingLineNumber = "548"
+            startingLineNumber = "621"
+            endingLineNumber = "621"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
             <Locations>
@@ -650,29 +490,61 @@
                   moduleName = "DiagnosticDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.622538"
+                  timestampString = "512317978.294815"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "546"
-                  endingLineNumber = "546"
-                  offsetFromSymbolStart = "2996">
+                  startingLineNumber = "621"
+                  endingLineNumber = "621"
+                  offsetFromSymbolStart = "4404">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DiagnosticDemo.ViewController.(observeValue (forKeyPath : Swift.Optional&lt;Swift.String&gt;, of : Swift.Optional&lt;Any&gt;, change : Swift.Optional&lt;Swift.Dictionary&lt;__C.NSKeyValueChangeKey, Any&gt;&gt;, context : Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;) -&gt; ()).(closure #2)"
+                  symbolName = "DiagnosticDemo.ViewController.(observeValue (forKeyPath : Swift.Optional&lt;Swift.String&gt;, of : Swift.Optional&lt;Any&gt;, change : Swift.Optional&lt;Swift.Dictionary&lt;__C.NSKeyValueChangeKey, Any&gt;&gt;, context : Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;) -&gt; ()).(closure #1)"
                   moduleName = "DiagnosticDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Rishikesh/Downloads/Diagnosticapp_iOS/DiagnosticApp/Archive/DiagnosticDemo/ViewController.swift"
-                  timestampString = "512302906.623894"
+                  timestampString = "512317978.296389"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "546"
-                  endingLineNumber = "546"
-                  offsetFromSymbolStart = "84">
+                  startingLineNumber = "623"
+                  endingLineNumber = "623"
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiagnosticDemo/ViewController.swift"
+            timestampString = "512317854.016809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
+            landmarkName = "observeValue(forKeyPath:of:change:context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiagnosticDemo/ViewController.swift"
+            timestampString = "512317854.016809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "623"
+            endingLineNumber = "623"
+            landmarkName = "observeValue(forKeyPath:of:change:context:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -687,7 +559,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "346"
             endingLineNumber = "346"
-            landmarkName = "loadFourthView()"
+            landmarkName = "loadThirdView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
