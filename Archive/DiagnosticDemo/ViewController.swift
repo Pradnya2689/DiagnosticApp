@@ -330,7 +330,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func loadThirdView(){
         
          (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
-        self.resultLabel.text = "Press Volume Up and Volume Down Buttons of your phone."
+        self.resultLabel.text = "Press Volume Up"
       
         self.gifImg.isHidden = true
         self.TestImage.isHidden = false
@@ -517,10 +517,9 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     
     //# MARK: - Volume Detect
     func volumedetect() -> Void{
-        
-        
         self.volumeflagup = "0"
         self.volumeflagdwn = "0"
+        
 //        NotificationCenter.default.addObserver(self, selector: "volumeChanged:", name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
 //        // Option #2
 //        
@@ -534,9 +533,6 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
 //        
 //        //        audioSession.setActive(true, error: nil)
         
-        
-       
-        
         volumelvl1 = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
         do{
            
@@ -545,9 +541,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }catch{
             print("could not start reachability notifier")
         }
-
-        
-        
+      
     }
     
     func volumeChanged(notification: NSNotification){
@@ -570,6 +564,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 print("up");
                 self.volumeflagup = "1"
                  self.HalfFillCircle()
+                self.resultLabel.text = "Press Volume Down Button."
                 volumelvl1 = volumelvl
             }
                 
@@ -629,8 +624,6 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 
                 }
             }
-            
-      //      }
             
             
         }
