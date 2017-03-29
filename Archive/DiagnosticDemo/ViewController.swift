@@ -257,6 +257,9 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         // Do any additional setup after loading the view, typically from a nib.
         //        self.buttonVc.translatesAutoresizingMaskIntoConstraints = true
         //        self.buttonVc.frame = CGRect(x: ((screenWidth/2)-25), y: 0, width: 603, height: 128);
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
         
         self.title = "Quality Check"
         loadEmptyCircle()
@@ -275,12 +278,17 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         wifiTestresult = "0"
         self.volumeflagup = "0"
         self.volumeflagdwn = "0"
-        self.gpsBtn.backgroundColor = UIColor.blue
-        self.proximityBtn.backgroundColor = UIColor.lightGray
-        self.volumeBtn.backgroundColor = UIColor.lightGray
-        self.wifiBtn.backgroundColor = UIColor.lightGray
+       // self.gpsBtn.setImage("gpsSel", for: .normal)
+        self.gpsBtn.setImage(UIImage.init(named: "gps"), for: .normal)
+        self.proximityBtn.setImage(UIImage.init(named: "proxDis"), for: .normal)
+        self.volumeBtn.setImage(UIImage.init(named: "volumeDis"), for: .normal)
+        self.wifiBtn.setImage(UIImage.init(named: "wifiDis"), for: .normal)
         
-        let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+//        self.proximityBtn.backgroundColor = UIColor.lightGray
+//        self.volumeBtn.backgroundColor = UIColor.lightGray
+//        self.wifiBtn.backgroundColor = UIColor.lightGray
+        
+        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
             
@@ -307,9 +315,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.TestImage.isHidden = true
         self.resultLabel.text = "Hover your hand on device."
        // self.TestImage.setGifImage(gifImage, manager: gifManager, loopCount: 20)
-        self.gpsBtn.backgroundColor = UIColor.green
-        self.proximityBtn.backgroundColor = UIColor.blue
-        
+//        self.gpsBtn.backgroundColor = UIColor.green
+//        self.proximityBtn.backgroundColor = UIColor.blue
+        self.gpsBtn.setImage(UIImage.init(named: "gpsSel"), for: .normal)
+        self.proximityBtn.setImage(UIImage.init(named: "proximity"), for: .normal)
+        self.volumeBtn.setImage(UIImage.init(named: "volumeDis"), for: .normal)
+        self.wifiBtn.setImage(UIImage.init(named: "wifiDis"), for: .normal)
        
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             
@@ -337,9 +348,13 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.TestImage.image = nil
         self.TestImage.gifImage = nil
         self.TestImage.image = UIImage(named: "volume")
-        self.volumeBtn.backgroundColor = UIColor.blue
-        self.proximityBtn.backgroundColor = UIColor.green
+//        self.volumeBtn.backgroundColor = UIColor.blue
+//        self.proximityBtn.backgroundColor = UIColor.green
         //self.TestImage.image = UIImage.init(named: "volume")
+        self.gpsBtn.setImage(UIImage.init(named: "gpsSel"), for: .normal)
+        self.proximityBtn.setImage(UIImage.init(named: "proxSel"), for: .normal)
+        self.volumeBtn.setImage(UIImage.init(named: "volume"), for: .normal)
+        self.wifiBtn.setImage(UIImage.init(named: "wifiDis"), for: .normal)
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             
             self.loadEmptyCircle()
@@ -358,9 +373,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
        
         self.resultLabel.text = "Wifi Test is in Progress..Ensure that your device's wifi is enabled."
         self.TestImage.image = UIImage(named: "wifi")
-        self.volumeBtn.backgroundColor = UIColor.green
-        self.wifiBtn.backgroundColor = UIColor.blue
-        
+//        self.volumeBtn.backgroundColor = UIColor.green
+//        self.wifiBtn.backgroundColor = UIColor.blue
+        self.gpsBtn.setImage(UIImage.init(named: "gpsSel"), for: .normal)
+        self.proximityBtn.setImage(UIImage.init(named: "proxSel"), for: .normal)
+        self.volumeBtn.setImage(UIImage.init(named: "volumeSel"), for: .normal)
+        self.wifiBtn.setImage(UIImage.init(named: "wifi"), for: .normal)
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             
@@ -385,7 +403,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         progressCircle1.path = circlePath1.cgPath
         progressCircle1.strokeColor = UIColor.lightGray.cgColor
         progressCircle1.fillColor = UIColor.clear.cgColor
-        progressCircle1.lineWidth = 11.0
+        progressCircle1.lineWidth = 8.0
         
         circle.layer.addSublayer(progressCircle1)
     }
@@ -400,9 +418,10 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         progressCircle = CAShapeLayer ()
         progressCircle.path = circlePath.cgPath
-        progressCircle.strokeColor = UIColor.green.cgColor
+        progressCircle.strokeColor = UIColor.init(red: 0, green: 128/255.0, blue: 255/255, alpha: 1).cgColor
+
         progressCircle.fillColor = UIColor.clear.cgColor
-        progressCircle.lineWidth = 10.0
+        progressCircle.lineWidth = 8.0
         
         circle.layer.addSublayer(progressCircle)
         
@@ -487,7 +506,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         progressCircle1.path = circlePath1.cgPath
         progressCircle1.strokeColor = UIColor.lightGray.cgColor
         progressCircle1.fillColor = UIColor.clear.cgColor
-        progressCircle1.lineWidth = 11.0
+        progressCircle1.lineWidth = 8.0
         
         circle.layer.addSublayer(progressCircle1)
         var progressCircle = CAShapeLayer()
@@ -496,9 +515,9 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         progressCircle = CAShapeLayer ()
         progressCircle.path = circlePath.cgPath
-        progressCircle.strokeColor = UIColor.green.cgColor
+        progressCircle.strokeColor = UIColor.init(red: 0, green: 128/255.0, blue: 255/255, alpha: 1).cgColor
         progressCircle.fillColor = UIColor.clear.cgColor
-        progressCircle.lineWidth = 9.0
+        progressCircle.lineWidth = 8.0
         
         circle.layer.addSublayer(progressCircle)
         
@@ -674,7 +693,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 
                 
             }
-            let when1 = DispatchTime.now() + 5  // change 2 to desired number of seconds
+            let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
                 // Your code with delay
                 //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
@@ -751,9 +770,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func reachabilityChanged(_ sender: NSNotification) {
         
         let reachability = sender.object as! Reachability
-    
-        
-        
+   
         if (Reachability2.isConnectedToNetwork())
         {
             print("Internet Connection Available!")
@@ -763,19 +780,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             let wifiName1 = Reachability2.fetchSSIDInfo()
             
             guard wifiName != nil else {
-                
-                //// TODO: Alert -----
+                 //// TODO: Alert -----
                 print("no wifi name")
-                
-                
-                
-                return
+                 return
             }
+             print("my network name is: \(wifiName!)")
             
-            
-            print("my network name is: \(wifiName!)")
-            
-            //resultLabel.text = "Wi-Fi Test Completed."
             self.loadFillCircle()
             
             
@@ -830,10 +840,57 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         // gpResult.text = "GPS Finding Location"
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+       locationManager.startUpdatingLocation()
+        if CLLocationManager.locationServicesEnabled() {
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+//                gpstestResult = "0"
+//                self.loadFillCircle()
+//                
+//                let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+//                DispatchQueue.main.asyncAfter(deadline: when) {
+//                    
+//                    self.resultLabel.text = "Failed to get location"
+//                    
+//                    
+//                }
+//                let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
+//                DispatchQueue.main.asyncAfter(deadline: when1) {
+//                    // Your code with delay
+//                    //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+//                    self.annimateView()
+//                    self.loadSEcondVC()
+//                    
+//                }
+                
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+                locationManager.startUpdatingLocation()
+            }
+        } else {
+            print("Location services are not enabled")
+        }
+    }
+     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error: " + error.localizedDescription)
+                        gpstestResult = "0"
+                        self.loadFillCircle()
+        
+                        let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+                        DispatchQueue.main.asyncAfter(deadline: when) {
+        
+                            self.resultLabel.text = "Failed to get location"
+        
+                        }
+                        let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
+                        DispatchQueue.main.asyncAfter(deadline: when1) {
+                            // Your code with delay
+                            //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+                            self.annimateView()
+                            self.loadSEcondVC()
+                            
+                        }
     }
     func  locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
@@ -853,11 +910,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
                 
-                self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+                self.resultLabel.text = "Location detected: \n \(locValue.latitude) \(locValue.longitude)"
                 
                 
             }
-            let when1 = DispatchTime.now() + 6  // change 2 to desired number of seconds
+            let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
                 // Your code with delay
                //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
