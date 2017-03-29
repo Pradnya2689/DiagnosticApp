@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "701"
-            endingLineNumber = "701"
+            startingLineNumber = "676"
+            endingLineNumber = "676"
             landmarkName = "proximityChanged(notification:)"
             landmarkType = "7">
             <Locations>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "708"
-            endingLineNumber = "708"
+            startingLineNumber = "683"
+            endingLineNumber = "683"
             landmarkName = "proximityChanged(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "789"
-            endingLineNumber = "789"
+            startingLineNumber = "764"
+            endingLineNumber = "764"
             landmarkName = "reachabilityChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "711"
-            endingLineNumber = "711"
+            startingLineNumber = "686"
+            endingLineNumber = "686"
             landmarkName = "proximityChanged(notification:)"
             landmarkType = "7">
             <Locations>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "643"
-            endingLineNumber = "643"
+            startingLineNumber = "618"
+            endingLineNumber = "618"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "733"
-            endingLineNumber = "733"
+            startingLineNumber = "708"
+            endingLineNumber = "708"
             landmarkName = "wifi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "752"
-            endingLineNumber = "752"
+            startingLineNumber = "727"
+            endingLineNumber = "727"
             landmarkName = "wifi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464185.803508"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "616"
-            endingLineNumber = "616"
+            startingLineNumber = "594"
+            endingLineNumber = "594"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "629"
-            endingLineNumber = "629"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "630"
-            endingLineNumber = "630"
+            startingLineNumber = "604"
+            endingLineNumber = "604"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512464582.985602"
+            timestampString = "512469993.417417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "631"
-            endingLineNumber = "631"
+            startingLineNumber = "605"
+            endingLineNumber = "605"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
