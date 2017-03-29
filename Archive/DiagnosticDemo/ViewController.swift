@@ -246,7 +246,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.resultLabel.text = "GPS Test."
 
     }
     
@@ -254,14 +254,14 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         self.title = ""
         self.EndTaskBtn.isHidden = true
-        
+         self.resultLabel.text = "GPS Test."
+       
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         
         self.title = "Quality Check"
         loadEmptyCircle()
-        self.resultLabel.text = "GPS Test is in progress..Ensure that device's GPS feature is ON."
         
         gpstestResult = "0"
         proximityTestresult = "0"
@@ -269,7 +269,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         wifiTestresult = "0"
         self.volumeflagup = "0"
         self.volumeflagdwn = "0"
-    
+     
         self.gpsBtn.setBackgroundImage(UIImage.init(named: "gps"), for: .normal)
         self.proximityBtn.setBackgroundImage(UIImage.init(named: "proxDis"), for: .normal)
         self.volumeBtn.setBackgroundImage(UIImage.init(named: "volumeDis"), for: .normal)
@@ -282,12 +282,17 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
-            
+           
             self.gpsBtnAction()
         }
+       
         
     
         self.TestImage.image = UIImage(named: "wocGps")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.resultLabel.text = "GPS Test."
+         self.resultLabel.text = " Auto-test in progress. Ensure the device GPS feature is on."
     }
     
     func reachabilityStatusChanged(_ sender: NSNotification)
@@ -297,14 +302,14 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
         //volume button test
     func loadSEcondVC(){
-        
+        self.resultLabel.text = "Proximity Sensor Test."
         let gifManager = SwiftyGifManager(memoryLimit:50)
         // let gif = UIImage(gifName: "motion_gesture_aircall6.gif")
         let gifImage = UIImage(gifName: "motion_gesture_aircall6.gif")
         self.gifImg.setGifImage(gifImage, manager: gifManager, loopCount: 20)
         self.gifImg.isHidden = false
         self.TestImage.isHidden = true
-        self.resultLabel.text = "Hover your hand on device."
+        
  
         self.gpsBtn.setBackgroundImage(UIImage.init(named: "gpsSel"), for: .normal)
         self.proximityBtn.setBackgroundImage(UIImage.init(named: "proximity"), for: .normal)
@@ -328,7 +333,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
     //proximity test
     func loadThirdView(){
-        
+        self.resultLabel.text = "Volume Button Test."
          (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
         self.resultLabel.text = "Press Volume Up"
       
@@ -610,7 +615,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                     let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
                     DispatchQueue.main.asyncAfter(deadline: when) {
                         
-                        self.resultLabel.text = "Volume Button Test Completed."
+                        self.resultLabel.text = "Volume button test success."
                         
                         
                     }
@@ -634,7 +639,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     
     //# MARK: - Proximity
     func proximityDetector() -> Void {
-        
+        self.resultLabel.text = "Auto-test in progress. Slowly hover your hand on the top of the phone."
       //device = UIDevice.current
         device.isProximityMonitoringEnabled = true
         if device.isProximityMonitoringEnabled {
@@ -658,7 +663,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
                 
-                self.resultLabel.text = "Proximity Sensors Test Completed."
+                self.resultLabel.text = "Proximity sensor test success."
                 
                 
             }
@@ -672,6 +677,32 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             }
             
         }
+        else
+        {
+            print("\(device) not detected!")
+            proximityTestresult = "0"
+            self.resultLabel.text = "Proximity sensor test failed."
+            self.loadFillCircle()
+            
+            
+            let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                
+               // self.resultLabel.text = "Proximity sensor test success."
+                
+                
+            }
+            let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when1) {
+                // Your code with delay
+                //self.resultLabel.text = "Location detected: \(locValue.latitude) \(locValue.longitude)"
+                self.annimateView()
+                self.loadThirdView()
+                
+            }
+
+        
+        }
     }
     
     //# MARK: - Wifi
@@ -680,7 +711,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func wifi() -> Void
     {
         
-       
+       self.resultLabel.text = "Auto-test in progress. Ensure the device's Wi-Fi feature is on."
        
         if (Reachability2.isConnectedToNetwork())
         {
@@ -693,6 +724,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             guard wifiName != nil else {
                 
                 print("no wifi name")
+                self.resultLabel.text = "Wi-Fi test failed. Connect to a Wi-Fi network to perform this test."
                 
                 return
             }
@@ -704,7 +736,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
                 wifiTestresult = "1"
-               self.resultLabel.text = "Wi-Fi Test Completed."
+               self.resultLabel.text = "Wi-Fi test success."
                 
                 
             }
@@ -722,7 +754,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }
         else
         {
-            resultLabel.text = "Please check with your wifi settings"
+            resultLabel.text = "Wi-Fi test failed. Turn-on Wi-Fi on the device"
              self.EndTaskBtn.isHidden = false
             wifiTestresult = "0"
             print("Internet Connection not Available!")
@@ -737,7 +769,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }
     }
     func reachabilityChanged(_ sender: NSNotification) {
-        
+        self.resultLabel.text = "Auto-test in progress. Wi-Fi is connected."
         let reachability = sender.object as! Reachability
    
         if (Reachability2.isConnectedToNetwork())
@@ -836,10 +868,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 
             case .authorizedAlways, .authorizedWhenInUse:
                 print("Access")
+                 self.resultLabel.text = "Auto-test in progress. Ensure the device GPS feature is on."
                 locationManager.startUpdatingLocation()
             }
         } else {
             print("Location services are not enabled")
+             self.resultLabel.text = "GPS test failed. Turn-on GPS on the device"
         }
     }
      func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -864,6 +898,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                         }
     }
     func  locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+       
         manager.stopUpdatingLocation()
         locationManager.stopUpdatingLocation()
         manager.delegate = nil
@@ -880,11 +916,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             
             let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
-                
-                self.resultLabel.text = "Location detected: \n \(locValue.latitude) \(locValue.longitude)"
-                
+                self.resultLabel.text = "Gps test success."
+               
+               
                 
             }
+             self.resultLabel.text = "Location detected: \n \(locValue.latitude) \(locValue.longitude)"
             let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
                 
