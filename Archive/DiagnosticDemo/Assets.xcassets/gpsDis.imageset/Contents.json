@@ -6,12 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "gprsDisable-1.png",
+      "filename" : "gprsDisable.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "gprsDisable.png",
       "scale" : "3x"
     }
   ],
