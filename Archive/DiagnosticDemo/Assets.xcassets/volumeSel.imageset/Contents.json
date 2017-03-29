@@ -6,12 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "vloume@2x.png",
+      "filename" : "vloume.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "vloume.png",
       "scale" : "3x"
     }
   ],

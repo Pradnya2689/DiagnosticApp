@@ -12,10 +12,10 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var reportTbl: UITableView!
     @IBOutlet var statusLbl:UILabel!
-    var iconArr = ["gps","volume","proximity","wifi"]
-    var lblArr = ["GPS Working", "Volume Button Working", "Proximity Working", "WiFi Working"]
+    var iconArr = ["gps","proximity","volume","wifi"]
+    var lblArr = ["GPS Working","Proximity Working","Volume Button Working", "WiFi Working"]
     var reportArr = ["accept","accept","reject","accept"]
-    var reportArr1 = [gpstestResult,volumeTest,proximityTestresult,wifiTestresult]
+    var reportArr1 = [gpstestResult,proximityTestresult,volumeTest,wifiTestresult]
     
     override func viewDidLoad() {
         super.viewDidLoad()
