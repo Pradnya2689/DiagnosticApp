@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="crH-4b-9sO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="crH-4b-9sO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -103,34 +103,20 @@
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgn-Dh-ayg">
                                         <rect key="frame" x="88" y="51" width="200" height="200"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wocGps" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-SR-VzG">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wocGps" translatesAutoresizingMaskIntoConstraints="NO" id="z6X-SR-VzG">
                                                 <rect key="frame" x="50" y="50" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="ZX5-mh-qn0"/>
-                                                    <constraint firstAttribute="width" constant="100" id="eaf-sM-5HC"/>
-                                                </constraints>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MmQ-xl-cnP">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MmQ-xl-cnP">
                                                 <rect key="frame" x="40" y="40" width="120" height="120"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="0Am-7a-GHr"/>
-                                                    <constraint firstAttribute="width" constant="120" id="Qah-Xg-8AF"/>
-                                                </constraints>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.098644482485357551" green="0.63805243388045252" blue="0.10357513143803723" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="z6X-SR-VzG" secondAttribute="trailing" constant="50" id="3Sg-37-DrY"/>
-                                            <constraint firstItem="MmQ-xl-cnP" firstAttribute="top" secondItem="vgn-Dh-ayg" secondAttribute="top" constant="40" id="6NR-BA-Mx7"/>
-                                            <constraint firstAttribute="bottom" secondItem="z6X-SR-VzG" secondAttribute="bottom" constant="50" id="87p-E4-oGa"/>
-                                            <constraint firstAttribute="height" constant="200" id="Ram-De-d9X"/>
-                                            <constraint firstItem="z6X-SR-VzG" firstAttribute="top" secondItem="vgn-Dh-ayg" secondAttribute="top" constant="50" id="ZBE-Gh-1o0"/>
-                                            <constraint firstItem="MmQ-xl-cnP" firstAttribute="leading" secondItem="vgn-Dh-ayg" secondAttribute="leading" constant="40" id="gnF-es-Bab"/>
-                                            <constraint firstAttribute="bottom" secondItem="MmQ-xl-cnP" secondAttribute="bottom" constant="40" id="h3D-W9-bdg"/>
-                                            <constraint firstAttribute="width" constant="200" id="lD1-7A-N69"/>
-                                            <constraint firstAttribute="trailing" secondItem="MmQ-xl-cnP" secondAttribute="trailing" constant="40" id="o62-Hx-ryp"/>
-                                            <constraint firstItem="z6X-SR-VzG" firstAttribute="leading" secondItem="vgn-Dh-ayg" secondAttribute="leading" constant="50" id="ve1-79-VZL"/>
+                                            <constraint firstAttribute="width" constant="200" id="9hy-sN-ZY3"/>
+                                            <constraint firstAttribute="height" constant="200" id="WsJ-8a-X3A"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fce-Yh-qR2">
@@ -175,12 +161,11 @@
                                     <constraint firstItem="lvB-hb-mtr" firstAttribute="top" secondItem="Fce-Yh-qR2" secondAttribute="bottom" constant="8" id="4Se-JC-OhU"/>
                                     <constraint firstItem="8I5-hb-MAm" firstAttribute="top" secondItem="lvB-hb-mtr" secondAttribute="bottom" constant="25" id="5tN-kN-8bw"/>
                                     <constraint firstItem="lvB-hb-mtr" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leading" constant="8" id="5zI-KI-Jn0"/>
-                                    <constraint firstAttribute="trailing" secondItem="vgn-Dh-ayg" secondAttribute="trailing" constant="87" id="9OG-6Q-AQB"/>
                                     <constraint firstItem="Fce-Yh-qR2" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leading" constant="14" id="EoS-U3-BLM"/>
-                                    <constraint firstItem="vgn-Dh-ayg" firstAttribute="top" secondItem="eBq-aw-bJW" secondAttribute="top" constant="51" id="QXM-zE-vSh"/>
+                                    <constraint firstItem="vgn-Dh-ayg" firstAttribute="top" secondItem="eBq-aw-bJW" secondAttribute="top" constant="51" id="J1Q-Gg-hzF"/>
                                     <constraint firstAttribute="bottom" secondItem="8I5-hb-MAm" secondAttribute="bottom" constant="34" id="gGl-Ju-3Nx"/>
                                     <constraint firstAttribute="trailing" secondItem="8I5-hb-MAm" secondAttribute="trailing" constant="143" id="h6m-aw-loe"/>
-                                    <constraint firstItem="vgn-Dh-ayg" firstAttribute="leading" secondItem="eBq-aw-bJW" secondAttribute="leading" constant="88" id="irb-Kx-feU"/>
+                                    <constraint firstItem="vgn-Dh-ayg" firstAttribute="centerX" secondItem="eBq-aw-bJW" secondAttribute="centerX" id="hm0-8j-mYH"/>
                                     <constraint firstAttribute="trailing" secondItem="lvB-hb-mtr" secondAttribute="trailing" constant="8" id="wq3-ye-tUa"/>
                                 </constraints>
                             </view>
