@@ -13,14 +13,14 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
     @IBOutlet weak var reportTbl: UITableView!
     @IBOutlet var statusLbl:UILabel!
     var iconArr = ["gps","proximity","volume","wifi"]
-    var lblArr = ["GPS Working","Proximity Working","Volume Button Working", "WiFi Working"]
+    var lblArr = ["GPS Working","Proximity Sensor Working","Volume Button Working", "Wi-Fi Working"]
     var reportArr = ["accept","accept","reject","accept"]
     var reportArr1 = [gpstestResult,proximityTestresult,volumeTest,wifiTestresult]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = "Quality Check Complete"
+        self.title = "Smart Check Complete"
         self.navigationItem.setHidesBackButton(true, animated:true);
 
         let btnView = UIView(frame: CGRect(x: 0, y: screenHeight-60, width: screenWidth, height: 60))
@@ -28,15 +28,16 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
         btn.backgroundColor = UIColor.init(red: 0, green: 128/255.0, blue: 255/255, alpha: 1)
         btn.setTitle("Test Again", for: .normal)
+        btn.titleLabel!.font =  UIFont(name: "MyriadPro-Bold", size: 17)
         btn.addTarget(self, action: #selector(testAgain), for: .touchUpInside)
         btnView.addSubview(btn)
         
         self.view.addSubview(btnView)
         self.view.bringSubview(toFront: btnView)
         if(gpstestResult == "1" && proximityTestresult == "1" && volumeTest == "1" && wifiTestresult == "1"){
-            self.statusLbl.text = "All test are Pass."
+            self.statusLbl.text = "All features tested successfully."
         }else{
-            self.statusLbl.text = "Diagnose completed. Some of the test failed."
+            self.statusLbl.text = "Some features showed errors upon testing."
         }
     }
     @IBAction func testAgain(){
@@ -68,17 +69,41 @@ class ReportViewController: UIViewController,UITableViewDataSource, UITableViewD
         return 4
     }
     
-    
+    //var lblArr = ["GPS Working","Proximity Sensor Working","Volume Button Working", "Wi-Fi Working"]
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reportCell", for: indexPath) as! ReportTableViewCell
         cell.iconImg.image = UIImage(named: iconArr[indexPath.row])
         cell.reportLbl.text = "\(lblArr[indexPath.row])"
         if ((reportArr1[indexPath.row]) == "1")
         {
+            if(indexPath.row == 0){
+                cell.reportLbl.text = "GPS Working"
+            }
+            if(indexPath.row == 1){
+                 cell.reportLbl.text = "Proximity Sensor Working"
+            }
+            if(indexPath.row == 2){
+                cell.reportLbl.text = "Volume Button Working"
+            }
+            if(indexPath.row == 3){
+                cell.reportLbl.text = "Wi-Fi Working"
+            }
             cell.reportImg.image = UIImage(named: "accept")
         }
          if ((reportArr1[indexPath.row]) == "0")
         {
+            if(indexPath.row == 0){
+                cell.reportLbl.text = "GPS Test Failed"
+            }
+            if(indexPath.row == 1){
+                cell.reportLbl.text = "Proximity Sensor Test Failed"
+            }
+            if(indexPath.row == 2){
+                cell.reportLbl.text = "Volume Button Test Failed"
+            }
+            if(indexPath.row == 3){
+                cell.reportLbl.text = "Wi-Fi Test Failed"
+            }
             cell.reportImg.image = UIImage(named: "reject")
         }
 

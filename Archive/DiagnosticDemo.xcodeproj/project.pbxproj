@@ -25,6 +25,7 @@
 		4C8A5ADD1E8537890017CBF2 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */; };
 		4C8A5ADE1E8537890017CBF2 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */; };
 		4C8A5ADF1E8537890017CBF2 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */; };
+		4C8BBCC81E8BD19C00A47502 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BBCC71E8BD19C00A47502 /* splash.png */; };
 		D962D7E01E88F26800FB0E23 /* Reachability2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962D7DF1E88F26800FB0E23 /* Reachability2.swift */; };
 		D962D7E41E88FDA700FB0E23 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962D7E31E88FDA700FB0E23 /* Reachability.swift */; };
 		D9D04A971E83AB5900AA5EDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */; };
@@ -76,6 +77,7 @@
 		4C8A5AD81E8537890017CBF2 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
 		4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
+		4C8BBCC71E8BD19C00A47502 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		D962D7DF1E88F26800FB0E23 /* Reachability2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability2.swift; sourceTree = "<group>"; };
 		D962D7E31E88FDA700FB0E23 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -148,6 +150,7 @@
 				D962D7DF1E88F26800FB0E23 /* Reachability2.swift */,
 				4C60A6DF1E82AEE500D57B40 /* AppDelegate.swift */,
 				4C60A6E11E82AEE600D57B40 /* ViewController.swift */,
+				4C8BBCC71E8BD19C00A47502 /* splash.png */,
 				4C3EABB21E83D35C00CC2911 /* ReportTableViewCell.swift */,
 				4C3EABB61E83D3B200CC2911 /* ReportViewController.swift */,
 				4C60A6E31E82AEE600D57B40 /* Main.storyboard */,
@@ -273,13 +276,10 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = A8U8Q2EEBA;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 4C60A6DB1E82AEE500D57B40;
 					};
 					4C60A6FD1E82AEE600D57B40 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = A8U8Q2EEBA;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 4C60A6DB1E82AEE500D57B40;
 					};
 				};
 			};
@@ -315,6 +315,7 @@
 				4C8A5AB81E84EEDC0017CBF2 /* MyriadPro-Bold.otf in Resources */,
 				4C60A6E51E82AEE600D57B40 /* Main.storyboard in Resources */,
 				4C8A5AB91E84EEDC0017CBF2 /* MyriadPro-It.otf in Resources */,
+				4C8BBCC81E8BD19C00A47502 /* splash.png in Resources */,
 				4C8A5ADB1E8537890017CBF2 /* motion_gesture_aircall6.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,13 +591,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A8U8Q2EEBA;
 				INFOPLIST_FILE = DiagnosticDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ingrammicro.diagnosticApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DiagnosticDemo/DiagnosticDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -609,12 +613,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = A8U8Q2EEBA;
 				INFOPLIST_FILE = DiagnosticDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ingrammicro.diagnosticApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DiagnosticDemo/DiagnosticDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -622,13 +629,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = DiagnosticDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ingrammicro..DiagnosticDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiagnosticDemo.app/DiagnosticDemo";
 			};
 			name = Debug;
 		};
@@ -636,13 +641,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = DiagnosticDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ingrammicro..DiagnosticDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiagnosticDemo.app/DiagnosticDemo";
 			};
 			name = Release;
 		};
@@ -650,12 +653,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DiagnosticDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ingrammicro..DiagnosticDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = DiagnosticDemo;
 			};
 			name = Debug;
 		};
@@ -663,12 +667,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DiagnosticDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ingrammicro..DiagnosticDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = DiagnosticDemo;
 			};
 			name = Release;
 		};
