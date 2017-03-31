@@ -119,11 +119,11 @@ open class Toast{
         label.layer.shadowOffset = CGSize(width: 4, height: 3)
         label.layer.shadowOpacity = 0.3
         if(position == "bottom"){
-            label.frame = CGRect(x: (screenWidth-200)/2,y: screenHeight-50, width: 200, height: sizeoftxt.height+20)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: screenHeight-120, width: 200, height: 60)
         }else if(position == "center"){
-            label.frame = CGRect(x: (screenWidth-200)/2,y: (screenHeight-sizeoftxt.height)/2, width: 200, height: sizeoftxt.height+20)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: (screenHeight-sizeoftxt.height)/2, width: 200, height: 60)
         }else{
-            label.frame = CGRect(x: (screenWidth-200)/2,y: 120, width: 200, height: sizeoftxt.height+20)
+            label.frame = CGRect(x: (screenWidth-200)/2,y: 120, width: 200, height: 60)
         }
         //label.frame = CGRectMake((screenWidth-200)/2,(screenHeight-sizeoftxt.height)/2, 200, sizeoftxt.height)
         label.layer.masksToBounds = true
@@ -135,11 +135,11 @@ open class Toast{
         
         UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
             if(position == "bottom"){
-                label.frame = CGRect(x: (screenWidth-200)/2,y: screenHeight-50, width: 200, height: sizeoftxt.height)
+                label.frame = CGRect(x: (screenWidth-200)/2,y: screenHeight-120, width: 200, height: 60)
             }else if(position == "center"){
-                label.frame = CGRect(x: (screenWidth-200)/2,y: (screenHeight-sizeoftxt.height)/2, width: 200, height: sizeoftxt.height)
+                label.frame = CGRect(x: (screenWidth-200)/2,y: (screenHeight-sizeoftxt.height)/2, width: 200, height: 60)
             }else{
-                label.frame = CGRect(x: (screenWidth-200)/2,y: 120, width: 200, height: sizeoftxt.height)
+                label.frame = CGRect(x: (screenWidth-200)/2,y: 120, width: 200, height: 60)
             }
             //label.frame = CGRectMake((screenWidth-200)/2,(screenHeight-sizeoftxt.height)/2, 200, sizeoftxt.height)
         },  completion: {
@@ -243,6 +243,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     let reachability = Reachability()!
     
     @IBOutlet var resultLabel:UILabel!
+    
+    @IBOutlet var testNameLbl:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -260,7 +262,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         
-        self.title = "Quality Check"
+        self.title = "Smart Check"
         loadEmptyCircle()
         
         gpstestResult = "0"
@@ -270,10 +272,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.volumeflagup = "0"
         self.volumeflagdwn = "0"
      
-        self.gpsBtn.setBackgroundImage(UIImage.init(named: "gps"), for: .normal)
-        self.proximityBtn.setBackgroundImage(UIImage.init(named: "proxDis"), for: .normal)
-        self.volumeBtn.setBackgroundImage(UIImage.init(named: "volumeDis"), for: .normal)
-        self.wifiBtn.setBackgroundImage(UIImage.init(named: "wifiDis"), for: .normal)
+        self.testNameLbl.text = "GPS Test"
+        self.gpsBtn.setBackgroundImage(UIImage.init(named: "gpsSel"), for: .normal)
+        self.proximityBtn.setBackgroundImage(UIImage.init(named: "proximity"), for: .normal)
+        self.volumeBtn.setBackgroundImage(UIImage.init(named: "volume"), for: .normal)
+        self.wifiBtn.setBackgroundImage(UIImage.init(named: "wifi"), for: .normal)
         
 //        self.proximityBtn.backgroundColor = UIColor.lightGray
 //        self.volumeBtn.backgroundColor = UIColor.lightGray
@@ -306,7 +309,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
         //volume button test
     func loadSEcondVC(){
-        self.resultLabel.text = "Proximity Sensor Test."
+        self.testNameLbl.text = "Proximity Sensor Test"
+        self.resultLabel.text = ""
         let gifManager = SwiftyGifManager(memoryLimit:50)
         // let gif = UIImage(gifName: "motion_gesture_aircall6.gif")
         let gifImage = UIImage(gifName: "motion_gesture_aircall6.gif")
@@ -315,10 +319,10 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.TestImage.isHidden = true
         
  
-        self.gpsBtn.setBackgroundImage(UIImage.init(named: "gpsSel"), for: .normal)
-        self.proximityBtn.setBackgroundImage(UIImage.init(named: "proximity"), for: .normal)
-        self.volumeBtn.setBackgroundImage(UIImage.init(named: "volumeDis"), for: .normal)
-        self.wifiBtn.setBackgroundImage(UIImage.init(named: "wifiDis"), for: .normal)
+        //self.gpsBtn.setBackgroundImage(UIImage.init(named: "gpsSel"), for: .normal)
+        self.proximityBtn.setBackgroundImage(UIImage.init(named: "proxSel"), for: .normal)
+        self.volumeBtn.setBackgroundImage(UIImage.init(named: "volume"), for: .normal)
+        self.wifiBtn.setBackgroundImage(UIImage.init(named: "wifi"), for: .normal)
        
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             
@@ -337,23 +341,21 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
     //proximity test
     func loadThirdView(){
-        self.resultLabel.text = "Volume Button Test."
+        self.testNameLbl.text = "Volume Button Test"
+        self.resultLabel.text = ""
          (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
         
+         (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
+        self.resultLabel.text = "Press Volume Up"
       
         self.gifImg.isHidden = true
         self.TestImage.isHidden = false
         self.TestImage.image = nil
         self.TestImage.gifImage = nil
-        self.TestImage.image = UIImage(named: "volume")
-//        self.volumeBtn.backgroundColor = UIColor.blue
-//        self.proximityBtn.backgroundColor = UIColor.green
-        //self.TestImage.image = UIImage.init(named: "volume")
-       // self.proximityBtn.setBackgroundImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControlState#>)
-        self.gpsBtn.setBackgroundImage(UIImage.init(named: "gpsSel"), for: .normal)
-        self.proximityBtn.setBackgroundImage(UIImage.init(named: "proxSel"), for: .normal)
-        self.volumeBtn.setBackgroundImage(UIImage.init(named: "volume"), for: .normal)
-        self.wifiBtn.setBackgroundImage(UIImage.init(named: "wifiDis"), for: .normal)
+        self.TestImage.image = UIImage(named: "wocvol")
+      //  self.proximityBtn.setBackgroundImage(UIImage.init(named: "proxSel"), for: .normal)
+        self.volumeBtn.setBackgroundImage(UIImage.init(named: "volumeSel"), for: .normal)
+        self.wifiBtn.setBackgroundImage(UIImage.init(named: "wifi"), for: .normal)
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             
             self.loadEmptyCircle()
@@ -369,15 +371,15 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //wifi test
     func loadFourthView(){
         
-       
-        self.resultLabel.text = "Wi-Fi Test"
-        self.TestImage.image = UIImage(named: "wifi")
+             self.testNameLbl.text = "Wi-Fi Test"
+        self.resultLabel.text = ""
+        self.TestImage.image = UIImage(named: "wocwifi")
 //        self.volumeBtn.backgroundColor = UIColor.green
 //        self.wifiBtn.backgroundColor = UIColor.blue
-        self.gpsBtn.setBackgroundImage(UIImage.init(named: "gpsSel"), for: .normal)
-        self.proximityBtn.setBackgroundImage(UIImage.init(named: "proxSel"), for: .normal)
-        self.volumeBtn.setBackgroundImage(UIImage.init(named: "volumeSel"), for: .normal)
-        self.wifiBtn.setBackgroundImage(UIImage.init(named: "wifi"), for: .normal)
+//        self.gpsBtn.setBackgroundImage(UIImage.init(named: "gpsSel"), for: .normal)
+//        self.proximityBtn.setBackgroundImage(UIImage.init(named: "proxSel"), for: .normal)
+//        self.volumeBtn.setBackgroundImage(UIImage.init(named: "volumeSel"), for: .normal)
+        self.wifiBtn.setBackgroundImage(UIImage.init(named: "wifiSel"), for: .normal)
         
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             
@@ -400,11 +402,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         progressCircle1 = CAShapeLayer ()
         progressCircle1.path = circlePath1.cgPath
-        progressCircle1.strokeColor = UIColor.lightGray.cgColor
+        progressCircle1.strokeColor = UIColor.init(red: 188/255.0, green: 188/255.0, blue: 188/255.0, alpha: 1).cgColor
         progressCircle1.fillColor = UIColor.clear.cgColor
         progressCircle1.lineWidth = 8.0
         
-        circle.layer.addSublayer(progressCircle1)
+        self.circleVc.layer.addSublayer(progressCircle1)
     }
     
     // load animation circle
@@ -527,24 +529,9 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     //# MARK: - Volume Detect
     func volumedetect() -> Void{
         
-        self.resultLabel.text = "Auto-test in progress. Press volume up button of your phone."
+        self.resultLabel.text = "Press volume up button of your phone."
         self.volumeflagup = "0"
         self.volumeflagdwn = "0"
-//        NotificationCenter.default.addObserver(self, selector: "volumeChanged:", name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
-//        // Option #2
-//        
-//        do{
-//            var audioSession =  AVAudioSession()
-//            try audioSession.setActive(true)
-//            audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
-//        }catch{
-//            print("could not start reachability notifier")
-//        }
-//        
-//        //        audioSession.setActive(true, error: nil)
-        
-        
-       
         
         volumelvl1 = MPMusicPlayerController.applicationMusicPlayer().value(forKey: "volume") as! Float
         do{
@@ -554,9 +541,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }catch{
             print("could not start reachability notifier")
         }
-
-        
-        
+      
     }
     
     func volumeChanged(notification: NSNotification){
@@ -579,7 +564,10 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 print("up");
                 self.volumeflagup = "1"
                  self.HalfFillCircle()
-                self.resultLabel.text = " Auto-test in progress. Press the volume down button of your phone."
+                // self.volumeBtn.setBackgroundImage(UIImage.init(named: "volume"), for: .normal)
+                 self.TestImage.image = UIImage(named: "volumeup")
+                self.resultLabel.text = "Press Volume Down Button."
+                self.resultLabel.text = "Press the Volume Down Button of your phone."
                 volumelvl1 = volumelvl
             }
                 
@@ -590,6 +578,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 volumelvl1 = volumelvl
                     print("down");
                 self.volumeflagdwn = "1"
+                self.TestImage.image = UIImage(named: "volumedown")
                  self.AnotherHalfFillCircle()
                    }
             
@@ -603,6 +592,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             if (self.volumeflagup == "1" && self.volumeflagdwn == "1")
             {
             
+                
                 do
                 {
                      audioSession.removeObserver(self, forKeyPath: "outputVolume", context: nil)
@@ -622,7 +612,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                     let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
                     DispatchQueue.main.asyncAfter(deadline: when) {
                         
-                        self.resultLabel.text = "Volume button test success."
+                        self.volumeBtn.setBackgroundImage(UIImage.init(named: "succvol"), for: .normal)
+                        self.resultLabel.text = "Volume Button test successful."
                         
                         
                     }
@@ -640,8 +631,6 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 }
             }
             
-      //      }
-            
             
         }
     }
@@ -654,6 +643,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
       //device = UIDevice.current
         device.isProximityMonitoringEnabled = true
         if device.isProximityMonitoringEnabled {
+            NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification")  , object: device)
             NotificationCenter.default.addObserver(self, selector: #selector(proximityChanged(notification:)), name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
         }
         if device.isProximityMonitoringEnabled == false{
@@ -676,8 +666,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             
             let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
-                
-                self.resultLabel.text = "Proximity sensor test success."
+                self.proximityBtn.setBackgroundImage(UIImage.init(named: "succproxi"), for: .normal)
+                self.resultLabel.text = "Proximity sensor test successful."
                 
                 
             }
@@ -695,6 +685,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         {
             print("\(device) not detected!")
             proximityTestresult = "0"
+            self.proximityBtn.setBackgroundImage(UIImage.init(named: "failproxi"), for: .normal)
             self.resultLabel.text = "Proximity sensor test failed."
             self.loadFillCircle()
             
@@ -725,12 +716,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func wifi() -> Void
     {
         
-       self.resultLabel.text = "Auto-test in progress. Ensure the device's Wi-Fi feature is on."
+       self.resultLabel.text = "Ensure the device's Wi-Fi feature is on."
        
         if (Reachability2.isConnectedToNetwork())
         {
             print("Internet Connection Available!")
-          
+           NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: reachability)
             
             let wifiName = Reachability2.getSSID()
              let wifiName1 = Reachability2.fetchSSIDInfo()
@@ -750,12 +741,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
                 wifiTestresult = "1"
-               self.resultLabel.text = "Wi-Fi test success."
+               self.resultLabel.text = "Wi-Fi test successful."
                 
                 
             }
             
-            Toast.sharedInstance.textOnlyToast("Wifi connected to \(wifiName!)", position: "bottom")
+            Toast.sharedInstance.textOnlyToast("Wi-Fi connected to \(wifiName!)", position: "bottom")
             
             let when1 = DispatchTime.now() + 4 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
@@ -769,10 +760,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         else
         {
             resultLabel.text = "Wi-Fi test failed. Turn-on Wi-Fi on the device"
+            self.wifiBtn.setBackgroundImage(UIImage.init(named: "failwifi"), for: .normal)
              self.EndTaskBtn.isHidden = false
             wifiTestresult = "0"
             print("Internet Connection not Available!")
-
+            NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: reachability)
             NotificationCenter.default.addObserver(self, selector:  #selector(ViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
             do{
                 try reachability.startNotifier()
@@ -790,6 +782,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
    
         if (Reachability2.isConnectedToNetwork())
         {
+            NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: reachability)
             print("Internet Connection Available!")
            NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: reachability)
              self.EndTaskBtn.isHidden = true
@@ -811,11 +804,11 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             DispatchQueue.main.asyncAfter(deadline: when) {
                 wifiTestresult = "1"
                 self.resultLabel.text = "Wi-Fi Test Completed."
-                
+                self.wifiBtn.setBackgroundImage(UIImage.init(named: "succwifi"), for: .normal)
                 
             }
             
-            Toast.sharedInstance.textOnlyToast("Wifi connected to \(wifiName!)", position: "bottom")
+            Toast.sharedInstance.textOnlyToast("Wi-Fi connected to \(wifiName!)", position: "bottom")
             
             let when1 = DispatchTime.now() + 4 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
@@ -829,7 +822,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         else
         {
              wifiTestresult = "0"
-            resultLabel.text = "Please check with your wifi settings"
+            resultLabel.text = "Please check with your Wi-Fi settings"
             self.EndTaskBtn.isHidden = false
             
             print("Internet Connection not Available!")
@@ -889,6 +882,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             }
         } else {
             print("Location services are not enabled")
+            self.gpsBtn.setBackgroundImage(UIImage.init(named: "failgps"), for: .normal)
              self.resultLabel.text = "GPS test failed. Turn-on GPS on the device"
         }
     }
@@ -900,7 +894,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                         let when = DispatchTime.now() + 3
         // change 2 to desired number of seconds
                         DispatchQueue.main.asyncAfter(deadline: when) {
-        
+                            self.gpsBtn.setBackgroundImage(UIImage.init(named: "failgps"), for: .normal)
                             self.resultLabel.text = "Failed to get location"
         
                         }
@@ -932,12 +926,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             
             let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
-                self.resultLabel.text = "Gps test success."
-               
-               
+                self.resultLabel.text = "GPS test successful."
+               //succgps
+               self.gpsBtn.setBackgroundImage(UIImage.init(named: "succgps"), for: .normal)
                 
             }
-             self.resultLabel.text = "Location detected: \n \(locValue.latitude) \(locValue.longitude)"
+             self.resultLabel.text = "Location detected \n \(locValue.latitude) \(locValue.longitude)"
             let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
                 
@@ -952,6 +946,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             let when = DispatchTime.now() + 4 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
                 // Your code with delay
+                self.gpsBtn.setBackgroundImage(UIImage.init(named: "failgps"), for: .normal)
                 self.resultLabel.text = "Failed to find location."
                 self.loadSEcondVC()
                 
