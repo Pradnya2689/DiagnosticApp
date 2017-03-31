@@ -286,6 +286,8 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         self.TestImage.image = UIImage(named: "gps")
     }
     override func viewDidAppear(_ animated: Bool) {
+        self.resultLabel.text = "GPS Test."
+        self.resultLabel.text = "Ensure the device GPS feature is on."
        // self.resultLabel.text = "GPS Test."
          //self.resultLabel.text =
 //        [UIView animateWithDuration:1.0
@@ -300,7 +302,12 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
             self.gpsBtnAction()
         }
         
+    
+        self.TestImage.image = UIImage(named: "wocGps")
     }
+//    override func viewDidAppear(_ animated: Bool) {
+//        
+//    }
     
     func reachabilityStatusChanged(_ sender: NSNotification)
     {
