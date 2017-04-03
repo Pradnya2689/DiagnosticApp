@@ -104,7 +104,7 @@ open class Toast{
         let label = UILabel(frame: CGRect.zero)
         label.textAlignment = NSTextAlignment.center
         label.text = message
-        label.font = UIFont(name: "MyriadPro-Regular", size: 13)
+        label.font = UIFont(name: "MyriadPro-Regular", size: 15)
         label.adjustsFontSizeToFitWidth = true
         
         label.backgroundColor =  UIColor(red: 26.0/255.0, green: 41.0/255.0, blue: 64.0/255.0, alpha: 1)
@@ -249,7 +249,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         super.viewDidLoad()
         
         self.resultLabel.text = "GPS Test."
-
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -524,7 +524,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     
     //# MARK: - Volume Detect
     func volumedetect() -> Void{
-        
+       
         self.resultLabel.text = "Press volume up button of your phone."
         self.volumeflagup = "0"
         self.volumeflagdwn = "0"
@@ -633,6 +633,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     
     //# MARK: - Proximity
     func proximityDetector() -> Void {
+       
         self.resultLabel.text = "Slowly hover your hand on the top of the phone."
       //device = UIDevice.current
         device.isProximityMonitoringEnabled = true
@@ -710,7 +711,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
        self.resultLabel.text = "Ensure the device's Wi-Fi feature is on."
        
-        if (Reachability2.isConnectedToNetwork())
+       if (Reachability2.isConnectedToNetwork())
         {
             print("Internet Connection Available!")
            NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: reachability)
@@ -838,7 +839,16 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     
     //# MARK: - GPS
     func gpsBtnAction() -> Void {
-        
+        self.loadFillCircle()
+        let when1 = DispatchTime.now() + 4
+        // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when1) {
+            
+            self.annimateView()
+            self.loadSEcondVC()
+            
+        }
+
         // gpResult.text = "GPS Finding Location"
         
        locationManager.startUpdatingLocation()
@@ -921,7 +931,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                self.gpsBtn.setBackgroundImage(UIImage.init(named: "succgps"), for: .normal)
                 
             }
-             self.resultLabel.text = "Location detected \n \(locValue.latitude) \(locValue.longitude)"
+             self.resultLabel.text = "Your location detected \n \(locValue.latitude) \(locValue.longitude)"
             let when1 = DispatchTime.now() + 4  // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when1) {
                 
