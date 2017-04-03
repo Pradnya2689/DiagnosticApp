@@ -26,6 +26,7 @@
 		4C8A5ADE1E8537890017CBF2 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */; };
 		4C8A5ADF1E8537890017CBF2 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */; };
 		4C8BBCC81E8BD19C00A47502 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8BBCC71E8BD19C00A47502 /* splash.png */; };
+		C3C8A69E1E8E328C0094933A /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C8A69D1E8E328C0094933A /* startViewController.swift */; };
 		D962D7E01E88F26800FB0E23 /* Reachability2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962D7DF1E88F26800FB0E23 /* Reachability2.swift */; };
 		D962D7E41E88FDA700FB0E23 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962D7E31E88FDA700FB0E23 /* Reachability.swift */; };
 		D9D04A971E83AB5900AA5EDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */; };
@@ -78,6 +79,7 @@
 		4C8A5AD91E8537890017CBF2 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		4C8A5ADA1E8537890017CBF2 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
 		4C8BBCC71E8BD19C00A47502 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		C3C8A69D1E8E328C0094933A /* startViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
 		D962D7DF1E88F26800FB0E23 /* Reachability2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability2.swift; sourceTree = "<group>"; };
 		D962D7E31E88FDA700FB0E23 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D9D04A951E83AB5900AA5EDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -150,6 +152,7 @@
 				D962D7DF1E88F26800FB0E23 /* Reachability2.swift */,
 				4C60A6DF1E82AEE500D57B40 /* AppDelegate.swift */,
 				4C60A6E11E82AEE600D57B40 /* ViewController.swift */,
+				C3C8A69D1E8E328C0094933A /* startViewController.swift */,
 				4C8BBCC71E8BD19C00A47502 /* splash.png */,
 				4C3EABB21E83D35C00CC2911 /* ReportTableViewCell.swift */,
 				4C3EABB61E83D3B200CC2911 /* ReportViewController.swift */,
@@ -426,6 +429,7 @@
 				4C3EABB71E83D3B200CC2911 /* ReportViewController.swift in Sources */,
 				4C8A5ADD1E8537890017CBF2 /* SwiftyGifManager.swift in Sources */,
 				4C8A5ADF1E8537890017CBF2 /* UIImageView+SwiftyGif.swift in Sources */,
+				C3C8A69E1E8E328C0094933A /* startViewController.swift in Sources */,
 				D962D7E01E88F26800FB0E23 /* Reachability2.swift in Sources */,
 				D962D7E41E88FDA700FB0E23 /* Reachability.swift in Sources */,
 				4C3EABB31E83D35C00CC2911 /* ReportTableViewCell.swift in Sources */,
