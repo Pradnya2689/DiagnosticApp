@@ -854,6 +854,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     
     //# MARK: - GPS
     func gpsBtnAction() -> Void {
+      
         self.loadFillCircle()
         let when1 = DispatchTime.now() + 4
         // change 2 to desired number of seconds
@@ -924,8 +925,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     }
     func  locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-       
-        manager.stopUpdatingLocation()
+               manager.stopUpdatingLocation()
         locationManager.stopUpdatingLocation()
         manager.delegate = nil
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate

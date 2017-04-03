@@ -538,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512636555.68553"
+            timestampString = "512898954.901578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "858"
-            endingLineNumber = "858"
+            startingLineNumber = "866"
+            endingLineNumber = "866"
             landmarkName = "gpsBtnAction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -666,11 +666,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512636555.68553"
+            timestampString = "512898954.901578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "917"
-            endingLineNumber = "917"
+            startingLineNumber = "925"
+            endingLineNumber = "925"
+            landmarkName = "locationManager(_:didFailWithError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiagnosticDemo/ViewController.swift"
+            timestampString = "512898954.901578"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "952"
+            endingLineNumber = "952"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -682,27 +698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512636555.68553"
+            timestampString = "512898954.901578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "945"
-            endingLineNumber = "945"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiagnosticDemo/ViewController.swift"
-            timestampString = "512636555.68553"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "946"
-            endingLineNumber = "946"
+            startingLineNumber = "953"
+            endingLineNumber = "953"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>

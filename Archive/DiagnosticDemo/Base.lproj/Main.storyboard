@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dMZ-BB-Zxw">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dMZ-BB-Zxw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -374,7 +374,7 @@
                                     <outlet property="delegate" destination="XO4-18-htj" id="etZ-cK-AW5"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B04-Cg-cwE">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B04-Cg-cwE">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDq-ZV-hvR">
@@ -389,7 +389,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyY-Z2-7g6">
-                                        <rect key="frame" x="0.0" y="0.0" width="185" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196078431372548" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Test Again">
@@ -405,8 +405,10 @@
                                     <constraint firstAttribute="trailing" secondItem="oDq-ZV-hvR" secondAttribute="trailing" id="66h-UA-3wk"/>
                                     <constraint firstAttribute="bottom" secondItem="nyY-Z2-7g6" secondAttribute="bottom" id="SvC-Ok-0co"/>
                                     <constraint firstItem="nyY-Z2-7g6" firstAttribute="leading" secondItem="B04-Cg-cwE" secondAttribute="leading" id="it5-p3-iM4"/>
-                                    <constraint firstItem="nyY-Z2-7g6" firstAttribute="width" secondItem="B04-Cg-cwE" secondAttribute="width" multiplier="0.5" id="rOg-Vq-ZGc"/>
-                                    <constraint firstItem="oDq-ZV-hvR" firstAttribute="width" secondItem="B04-Cg-cwE" secondAttribute="width" multiplier="0.5" id="uqj-zp-ejl"/>
+                                    <constraint firstItem="nyY-Z2-7g6" firstAttribute="height" secondItem="B04-Cg-cwE" secondAttribute="height" id="pps-Nv-d5A"/>
+                                    <constraint firstItem="oDq-ZV-hvR" firstAttribute="height" secondItem="B04-Cg-cwE" secondAttribute="height" id="pzl-7Q-Xaf"/>
+                                    <constraint firstItem="nyY-Z2-7g6" firstAttribute="width" secondItem="B04-Cg-cwE" secondAttribute="width" multiplier="0.5" constant="-0.5" id="rOg-Vq-ZGc"/>
+                                    <constraint firstItem="oDq-ZV-hvR" firstAttribute="width" secondItem="B04-Cg-cwE" secondAttribute="width" multiplier="0.5" constant="0.5" id="uqj-zp-ejl"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -422,6 +424,7 @@
                             <constraint firstItem="sCv-9Q-R3S" firstAttribute="top" secondItem="B04-Cg-cwE" secondAttribute="bottom" id="XjJ-1x-HD0"/>
                             <constraint firstItem="B04-Cg-cwE" firstAttribute="leading" secondItem="VXt-0B-Ka7" secondAttribute="leading" id="Y92-LE-qKj"/>
                             <constraint firstItem="yII-4J-7sA" firstAttribute="top" secondItem="YS2-RL-2ZM" secondAttribute="bottom" id="dSI-4D-pyI"/>
+                            <constraint firstItem="B04-Cg-cwE" firstAttribute="top" secondItem="yII-4J-7sA" secondAttribute="bottom" constant="2" id="gaS-Pm-weR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -438,7 +441,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dMZ-BB-Zxw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NNK-ws-RQN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NNK-ws-RQN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
