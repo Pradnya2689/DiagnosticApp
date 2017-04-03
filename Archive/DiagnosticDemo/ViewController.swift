@@ -256,7 +256,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         
         self.title = ""
         self.EndTaskBtn.isHidden = true
-         self.resultLabel.text = "GPS Test."
+        // self.resultLabel.text = "GPS Test."
        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -282,21 +282,32 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
 //        self.volumeBtn.backgroundColor = UIColor.lightGray
 //        self.wifiBtn.backgroundColor = UIColor.lightGray
         
+        
+        self.TestImage.image = UIImage(named: "gps")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.resultLabel.text = "GPS Test."
+        self.resultLabel.text = "Ensure the device GPS feature is on."
+       // self.resultLabel.text = "GPS Test."
+         //self.resultLabel.text =
+//        [UIView animateWithDuration:1.0
+//            animations:^{
+//            label.alpha = 0.0f;
+//            label.text = newText;
+//            label.alpha = 1.0f;
+//            }];
         let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
-           
             self.gpsBtnAction()
         }
-       
         
     
         self.TestImage.image = UIImage(named: "wocGps")
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.resultLabel.text = "GPS Test."
-         self.resultLabel.text = "Ensure the device GPS feature is on."
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        
+//    }
     
     func reachabilityStatusChanged(_ sender: NSNotification)
     {
@@ -591,7 +602,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 
                 do
                 {
-                    audioSession.removeObserver(self, forKeyPath: "outputVolume", context: nil)
+                     audioSession.removeObserver(self, forKeyPath: "outputVolume", context: nil)
                     try audioSession.setActive(false)
                      volumeTest  = "1"
 //                    self.loadFillCircle()
@@ -649,8 +660,10 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
     func proximityChanged(notification: NSNotification) {
 
         device.isProximityMonitoringEnabled = false
-        if let device = notification.object as? UIDevice {
-            NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification")  , object: device)
+       
+        if let device = notification.object as? UIDevice
+        {
+             NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification")  , object: device)
             print("\(device) detected!")
             proximityTestresult = "1"
             self.resultLabel.text = "Proximity Sensors Test In Progress."
@@ -768,14 +781,16 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
         }
     }
     func reachabilityChanged(_ sender: NSNotification) {
-        self.resultLabel.text = "Wi-Fi is connected."
+        
+        self.resultLabel.text = "Auto-test in progress. Wi-Fi is connected."
+        
         let reachability = sender.object as! Reachability
    
         if (Reachability2.isConnectedToNetwork())
         {
             NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: reachability)
             print("Internet Connection Available!")
-           
+           NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: reachability)
              self.EndTaskBtn.isHidden = true
             let wifiName = Reachability2.getSSID()
             
@@ -877,7 +892,7 @@ class ViewController: UIViewController ,AVAudioPlayerDelegate,AVAudioRecorderDel
                 
             case .authorizedAlways, .authorizedWhenInUse:
                 print("Access")
-                 self.resultLabel.text = "Ensure the device GPS feature is on."
+               //  self.resultLabel.text = "Auto-test in progress. Ensure the device GPS feature is on."
                 locationManager.startUpdatingLocation()
             }
         } else {
